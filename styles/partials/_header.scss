@@ -1,0 +1,14 @@
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    padding: 40px 0;
+    li {
+        margin-right: 30px;
+    }
+    a {
+        @extend .button;
+    }
+}

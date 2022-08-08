@@ -1,0 +1,18 @@
+.hero {
+    height: 100vh;
+    position: relative;
+
+}
+
+.hero-media {
+    @include position-absolute;
+    z-index: -1;
+}
+
+.header-logo {
+    max-width: 300px;
+}
+
+.hero-content {
+    max-width: 480px;
+}
