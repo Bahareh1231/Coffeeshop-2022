@@ -30,46 +30,36 @@ get_header();?>
         </div><!-- hero-content -->
     </section>
 
-    <!-- HEADER QUOTE -->
-    <section class="quote primary-bg text-center">
-        <div class="container">
-            <?php if ( get_field( 'header_quote' ) ) : ?>
-            <p class=" dark-grey-text large text-uppercase head-font"><?php echo esc_html( get_field( 'header_quote' ) ); ?></p>
-            <?php endif;?>
-            <?php if ( get_field( 'header_author' ) ) : ?>
-            <p class="text-shadow white-text bold small"><?php echo esc_html( get_field( 'header_author' ) ); ?></p>
-            <?php endif;?>
-        </div>
-    </section>
-
     <!-- FEATURE REELS -->
-    <section class="feature-reel container">
-        <div class="row">
-            <div class="col-lg-6 reel-text">
-                <?php
-                $reel_header = get_field( 'feature_header' );
-                if ( $reel_header ) {
-                    $new_reel_header = str_replace('[', '<span class="primary-text">', $reel_header );
-                    $new_reel_header = str_replace(']', '</span><br>', $new_reel_header);
-                }
-                ?>
-                <?php if ( $reel_header ) : ?>
-                <h2 class="secondary-text text-shadow mb-3"><?php echo do_shortcode( $new_reel_header ); ?></h2>
-                <?php endif; ?>
-                <?php if ( get_field( 'feature_copy' ) ) :?>
-                <div class="dark-grey-text"><?php echo do_shortcode( get_field( 'feature_copy' ) );?></div>
-                <?php endif; ?>
-                <a href="" class="button dark-grey-text film-button me-4 active-button">Film Reel</a>
-                <a href="" class="button dark-grey-text drone-button ">Drone Reel</a>
-            </div>
-            <div class="col-lg-6 reel-videos">
-                <?php
-                foreach( get_field( 'feature_reels' ) as $item ) : 
-                $reel_url   = $item['url'];
-                $reel_cover = $item['cover_image'];
-                $class      = $item['type'];
-                embed_video($reel_url, $reel_cover, $class);
-                endforeach; ?>
+    <section class="feature-reel">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 reel-text">
+                    <?php
+                    $reel_header = get_field( 'feature_header' );
+                    if ( $reel_header ) {
+                        $new_reel_header = str_replace('[', '<span class="primary-text">', $reel_header );
+                        $new_reel_header = str_replace(']', '</span><br>', $new_reel_header);
+                    }
+                    ?>
+                    <?php if ( $reel_header ) : ?>
+                    <h2 class="secondary-text mb-3"><?php echo do_shortcode( $new_reel_header ); ?></h2>
+                    <?php endif; ?>
+                    <?php if ( get_field( 'feature_copy' ) ) :?>
+                    <div class="dark-grey-text"><?php echo do_shortcode( get_field( 'feature_copy' ) );?></div>
+                    <?php endif; ?>
+                    <a href="" class="button dark-grey-text film-button me-4 active-button">Film Reel</a>
+                    <a href="" class="button dark-grey-text drone-button ">Drone Reel</a>
+                </div>
+                <div class="col-lg-6 reel-videos">
+                    <?php
+                    foreach( get_field( 'feature_reels' ) as $item ) : 
+                    $reel_url   = $item['url'];
+                    $reel_cover = $item['cover_image'];
+                    $class      = $item['type'];
+                    embed_video($reel_url, $reel_cover, $class);
+                    endforeach; ?>
+                </div>
             </div>
         </div>
     </section>
@@ -95,6 +85,8 @@ get_header();?>
                     <?php if ( $team_copy ) : ?>
                     <div><?php echo do_shortcode( $team_copy ); ?></div>
                     <?php endif; ?>
+                    <a href="" class="white-text button me-4 view-web-team active-button ">Web Design Team</a>
+                    <a href="" class="white-text button view-film-team">Filmography Team</a>
                 </div>
             </div>
             <div class="film-team">
@@ -157,8 +149,7 @@ get_header();?>
                 <?php endforeach; ?>
             </div>
 
-            <a href="" class="white-text button  view-web-team">Web Design Team</a>
-            <a href="" class="white-text button view-film-team">Filmography Team</a>
+            
         </div>
     </section>
 

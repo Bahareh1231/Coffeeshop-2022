@@ -1,11 +1,27 @@
 @charset "UTF-8";
-/* anton-regular - latin */
 @font-face {
-  font-family: "Anton";
+  font-family: "Futura";
+  src: url("../fonts/futura-bold-03-webfont.woff2") format("woff2"), url("../fonts/futura-bold-03-webfont.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/anton-v11-latin-regular.woff2") format("woff2"), url("../fonts/anton-v11-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+  font-family: "Futura";
+  src: url("../fonts/futura-condensedextrabold-05-webfont.woff2") format("woff2"), url("../fonts/futura-condensedextrabold-05-webfont.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura";
+  src: url("../fonts/futura-medium-01-webfont.woff2") format("woff2"), url("../fonts/futura-medium-01-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura";
+  src: url("../fonts/futura-mediumitalic-02-webfont.woff2") format("woff2"), url("f../fonts/utura-mediumitalic-02-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
 }
 /* ubuntu-regular - latin */
 @font-face {
@@ -80,7 +96,7 @@ img {
 }
 
 .primary-text {
-  color: #F69520;
+  color: #ff8200;
 }
 
 .secondary-text {
@@ -96,7 +112,7 @@ img {
 }
 
 .primary-bg {
-  background-color: #F69520;
+  background-color: #ff8200;
 }
 
 .secondary-bg {
@@ -106,7 +122,8 @@ img {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5,
 .head-font {
-  font-family: "Anton", sans-serif;
+  font-family: "Futura", sans-serif;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -137,7 +154,7 @@ h4, .h4 {
   display: block;
   height: calc(100% + 6px);
   width: 23px;
-  background-color: #F69520;
+  background-color: #ff8200;
   position: absolute;
   z-index: -1;
   left: -7px;
@@ -183,13 +200,20 @@ header li {
 }
 
 .hero-content {
-  max-width: 480px;
+  max-width: 618px;
+}
+
+.quote {
+  padding: 20px 0;
+}
+.quote p {
+  margin: 0;
 }
 
 .video-embed {
   position: relative;
   width: 100%;
-  height: 320px;
+  aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: 60px;
   display: flex;
@@ -229,11 +253,6 @@ header li {
   top: 4px;
 }
 
-@media (max-width: 1399px) {
-  .video-embed {
-    height: 300px;
-  }
-}
 .feature-reel {
   padding: 90px 0;
 }
@@ -256,17 +275,10 @@ header li {
     padding-right: 15px;
   }
   .reel-videos {
-    padding-left: 0px;
+    padding-left: 15px;
     padding-top: 40px;
   }
 }
-.quote {
-  padding: 20px 0;
-}
-.quote p {
-  margin: 0;
-}
-
 .team {
   padding: 90px 0;
 }
@@ -293,8 +305,7 @@ header li {
   height: 348px;
 }
 
-.web-team,
-.view-film-team {
+.web-team {
   display: none;
   opacity: 0;
 }
