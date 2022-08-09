@@ -1,0 +1,38 @@
+.video-embed {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 60px;
+    @include display-center;
+    a {
+        @include position-absolute;
+        z-index: 10;
+    }
+    .video-overlay {
+        @include position-absolute;
+    }
+    .play-button {
+        width: 90px;
+        height: 57px;
+        background-color: #4A4849;
+        border-radius: 15px;
+        z-index: 10;
+        position: relative;
+        &:before {
+            content: '▶︎';
+            display: block;
+            position: absolute;
+            color: $white;
+            font-size: 33px;
+            right: 27px;
+            top: 4px;
+        }
+    }
+}
+
+@media(max-width: 1399px) {
+    .video-embed {
+        height: 300px;
+    }
+}

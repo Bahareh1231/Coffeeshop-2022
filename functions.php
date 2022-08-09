@@ -24,7 +24,7 @@ function coffee_scripts() {
     wp_enqueue_script('jquery', true);
 
     //main JS + jquery
-    wp_enqueue_script('script', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js', array(), '5.2.0', true );
+    wp_enqueue_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js', array(), '5.2.0', true );
     
     //main JS + jquery
     wp_enqueue_script('script', get_template_directory_uri() . '/scripts/scripts.js', array('jquery'), '1.2.0', true );
@@ -63,12 +63,7 @@ function coffee_menu() {
 add_action('init', 'coffee_menu');
 
 // embeds youtube or vimeo videos and sets them into a lightbox
-function embed_video($url, $photo) {
-    echo '<div class="video-embed"><a href="' . esc_url( $url ) . '" class="fancybox"></a>';
-    if ( $photo ) :
-        echo wp_get_attachment_image($photo, 'medium', false); 
-    endif;
-
+function embed_video($url, $photo, $class) {
     //This is a general function for generating an embed link of an FB/Vimeo/Youtube Video.
     $finalUrl = '';
     if(strpos($url, 'vimeo.com/') !== false) {
@@ -94,8 +89,16 @@ function embed_video($url, $photo) {
             $videoId = explode("&",$videoId)[0];
         }
         $finalUrl ='https://www.youtube.com/embed/'.$videoId;
-    }else{
+    }else {
         $finalUrl = $url;
     }
-    echo '<iframe width="100%"  src="' . esc_url( $finalUrl ) . '" frameborder="0" allowfullscreen></iframe></div>';
+
+    echo '<div class="video-embed ' . $class . '">';
+    if ( $photo ) {
+        echo wp_get_attachment_image($photo, 'large', false, array( 'class' => 'video-overlay object-cover' )); 
+        echo '<a href="' . esc_url( $finalUrl ) . '" class="fancybox"></a><span class="play-button"></span>';
+    } else {
+        echo '<iframe width="100%"  src="' . esc_url( $finalUrl ) . '" frameborder="0" allowfullscreen></iframe></div>';
+    }
+    echo '</div>';
 }

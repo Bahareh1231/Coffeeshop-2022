@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* anton-regular - latin */
 @font-face {
   font-family: "Anton";
@@ -185,13 +186,95 @@ header li {
   max-width: 480px;
 }
 
+.video-embed {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-embed a {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 10;
+}
+.video-embed .video-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+.video-embed .play-button {
+  width: 90px;
+  height: 57px;
+  background-color: #4A4849;
+  border-radius: 15px;
+  z-index: 10;
+  position: relative;
+}
+.video-embed .play-button:before {
+  content: "▶︎";
+  display: block;
+  position: absolute;
+  color: #fff;
+  font-size: 33px;
+  right: 27px;
+  top: 4px;
+}
+
+@media (max-width: 1399px) {
+  .video-embed {
+    height: 300px;
+  }
+}
 .feature-reel {
   padding: 90px 0;
 }
 
+.reel-text {
+  padding-right: 30px;
+}
+
+.reel-videos {
+  padding-left: 30px;
+}
+
+.video-embed.drone {
+  display: none;
+  opacity: 0;
+}
+
+@media (max-width: 991px) {
+  .reel-text {
+    padding-right: 15px;
+  }
+  .reel-videos {
+    padding-left: 0px;
+    padding-top: 40px;
+  }
+}
 .quote {
   padding: 20px 0;
 }
 .quote p {
   margin: 0;
+}
+
+.team {
+  padding: 90px 0;
+}
+
+.team-header {
+  padding-bottom: 45px;
+}
+
+.team-content {
+  padding-top: 45px;
 }/*# sourceMappingURL=main.css.map */
