@@ -277,4 +277,54 @@ header li {
 
 .team-content {
   padding-top: 45px;
+}
+.team-content .order-md-2 + .team-image {
+  padding-right: 80px;
+  padding-left: 0;
+}
+
+.team-image {
+  padding-left: 80px;
+}
+
+.team-wrap {
+  border-radius: 50%;
+  overflow: hidden;
+  height: 348px;
+}
+
+.web-team,
+.view-film-team {
+  display: none;
+  opacity: 0;
+}
+
+@media (max-width: 1399px) {
+  .team-wrap {
+    height: 288px;
+  }
+}
+@media (max-width: 1199px) {
+  .team-wrap {
+    height: 227.99px;
+  }
+}
+@media (max-width: 991px) {
+  .team-wrap {
+    height: 227.98px;
+  }
+  .team-image {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .team-content .order-md-2 + .team-image {
+    padding-right: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .team-wrap {
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+  }
 }/*# sourceMappingURL=main.css.map */

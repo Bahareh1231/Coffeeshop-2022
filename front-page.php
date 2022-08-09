@@ -107,19 +107,21 @@ get_header();?>
                 $image    = $item['image'];
 
                 if ( $item ['content_right' ] ) {
-                    $align = 'order-lg-2';
+                    $align = 'order-md-2';
                 } else {
                     $align = '';
                 }
                 ?>
-                <div class="row team-content">
-                    <div class="col-lg-8 <?php echo esc_attr( $align ); ?>">
-                        <p class="head-font mb-0"><span class="h3"><?php echo esc_html( $name ); ?></span><span class="primary-text"><?php echo esc_html( $position ); ?></span></p>
+                <div class="row team-content align-items-center">
+                    <div class="col-md-8 <?php echo esc_attr( $align ); ?>">
+                        <p class="head-font mb-0"><span class="h3"><?php echo esc_html( $name ); ?></span><span class="primary-text"> <?php echo esc_html( $position ); ?></span></p>
                         <p class="head-font"><?php echo esc_html( $subhead ); ?></p>
                         <?php echo do_shortcode( $bio ); ?>
                     </div>
-                    <div class="col-lg-4 team-image">
-
+                    <div class="col-md-4 team-image">
+                        <div class="team-wrap">
+                            <?php echo wp_get_attachment_image( $image, 'medium', false, array( 'class' => 'object-cover' ) ); ?>
+                        </div>
                     </div>
                 </div>
                 <?php endforeach; ?>
@@ -135,25 +137,27 @@ get_header();?>
                 $image    = $item['image'];
 
                 if ( $item ['content_right' ] ) {
-                    $align = 'order-lg-2';
+                    $align = 'order-md-2';
                 } else {
                     $align = '';
                 }
                 ?>
-                <div class="row team-content">
-                    <div class="col-lg-8 <?php echo esc_attr( $align ); ?>">
-                        <p class="head-font mb-0"><span class="h3"><?php echo esc_html( $name ); ?></span><span class="primary-text"><?php echo esc_html( $position ); ?></span></p>
+                <div class="row team-content align-items-center ">
+                    <div class="col-md-8 <?php echo esc_attr( $align ); ?>">
+                        <p class="head-font mb-0"><span class="h3"><?php echo esc_html( $name ); ?></span><span class="primary-text"> <?php echo esc_html( $position ); ?></span></p>
                         <p class="head-font"><?php echo esc_html( $subhead ); ?></p>
                         <?php echo do_shortcode( $bio ); ?>
                     </div>
-                    <div class="col-lg-4 team-image">
-
+                    <div class="col-md-4 team-image">
+                        <div class="team-wrap">
+                            <?php echo wp_get_attachment_image( $image, 'medium', false, array( 'class' => 'object-cover' ) ); ?>
+                        </div>
                     </div>
                 </div>
                 <?php endforeach; ?>
             </div>
 
-            <a href="" class="white-text button active-button view-web-team">Web Design Team</a>
+            <a href="" class="white-text button  view-web-team">Web Design Team</a>
             <a href="" class="white-text button view-film-team">Filmography Team</a>
         </div>
     </section>
