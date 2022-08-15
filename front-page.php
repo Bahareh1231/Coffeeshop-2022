@@ -153,5 +153,90 @@ get_header();?>
         </div>
     </section>
 
+    <!-- SERVICES -->
+    <section class="services container">
+        <div class="row">
+            <div class="col-lg-6 services-text">
+                <?php
+                $services_header = get_field( 'services_header' );
+                $video_service = get_field( 'videography' );
+                $web_service = get_field( 'web_design' );
+                ?>
+                <?php if ( $services_header ) : ?>
+                <h2 class="secondary-text mb-3"><?php echo esc_html(  $services_header ); ?></h2>
+                <?php endif; ?>
+                <?php if ( get_field( 'services_copy' ) ) :?>
+                <div class="dark-grey-text"><?php echo do_shortcode( get_field( 'services_copy' ) );?></div>
+                <?php endif; ?>
+                <a href="" class="button dark-grey-text video-button me-4 active-button">Videography</a>
+                <a href="" class="button dark-grey-text web-button ">Web Design</a>
+            </div>
+        </div>
+        <!-- VIDEO SERVICES -->
+        <div class="video-service">
+            <?php foreach( $video_service as $item ) : ?>
+            <div class="row align-items-center">
+                <!-- image -->
+               <div class="service-image-wrap col-lg-6">
+                    <div class="service-image">
+                        <?php echo wp_get_attachment_image($item['image'], 'large', false, array( 'class' => 'object-cover' )) ; ?>
+                        <div class="service-title"><p class="primary-text head-font"><?php echo esc_html( $item['header']) ; ?></p></div>
+                    </div>
+               </div>
+               <!-- copy -->
+               <div class="col-lg-6">
+                    <div class="service-content">
+                    <?php echo do_shortcode( $item['copy'] );?>
+                    </div>
+               </div>
+            </div><!-- end of row -->
+            <?php endforeach; ?>
+        </div>
+        <!-- WEB SERVICES -->
+        <div class="web-service">
+            <?php foreach( $web_service as $item ) : ?>
+            <div class="row align-items-center">
+                <!-- image -->
+               <div class="service-image-wrap col-lg-6">
+                    <div class="service-image">
+                        <?php echo wp_get_attachment_image($item['image'], 'large', false, array( 'class' => 'object-cover')) ; ?>
+                        <div class="service-title"><p class="primary-text head-font"><?php echo esc_html( $item['header']) ; ?></p></div>
+                    </div>
+               </div>
+               <!-- copy -->
+               <div class="col-lg-6">
+                    <div class="service-content">
+                    <?php echo do_shortcode( $item['copy'] );?>
+                    </div>
+               </div>
+            </div><!-- end of row -->
+            <?php endforeach; ?>
+        </div>
+    </section>
+
+    <!-- RENTAL -->
+    <section class="black-bg white-text rental">
+        <div class="container">
+            <div class="row align-items-end mb-5">
+                <div class="col-lg-6">
+                    <?php
+                    $r_header   = get_field( 'rental_header' );
+                    $r_copy     = get_field( 'rental_copy' );
+                    $r_sub_head = get_field( 'rental_sub_head' );
+                    $r_sub_copy = get_field( 'rental_sub_copy' );
+                    ?>
+                    <h2 class="mb-3"><?php echo esc_html( $r_header ); ?></h2>
+                    <div class="rental-copy"><?php echo do_shortcode( $r_copy  ); ?></div>
+                    <p class="h3 primary-text head-text"><?php echo esc_html( $r_sub_head ); ?></p>
+                    <div class="rental-sub-copy"><?php echo do_shortcode( $r_sub_copy ); ?></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="rental-image"><?php echo wp_get_attachment_image( get_field( 'rental_image' ), 'large', false, array( 'class' => 'object-cover' ) );?></div>
+                </div>
+            </div>
+            <a href="#contact" class="white-text button"><?php echo esc_html( get_field( 'contact_link_text' ) );?></a>
+        </div>
+    </section>
+
 
 <?php get_footer();?>

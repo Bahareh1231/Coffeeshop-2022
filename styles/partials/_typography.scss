@@ -168,6 +168,11 @@ h4, .h4 {
 }
 
 // Buttons
+// Button
+.active-button {
+    pointer-events: none;
+}
+
 .button {
     font-weight: $bold;
     text-transform: uppercase;
@@ -189,6 +194,12 @@ h4, .h4 {
     &:hover:before,
     &.active-button:before {
         width: calc(100% + 15px);
+    }
+    &:hover {
+        color: $dark-grey;
+    }
+    &.white-text:hover {
+        color: $white;
     }
 }
 
