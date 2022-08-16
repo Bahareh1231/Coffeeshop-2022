@@ -106,7 +106,7 @@ get_header();?>
                 ?>
                 <div class="row team-content align-items-center">
                     <div class="col-md-8 <?php echo esc_attr( $align ); ?>">
-                        <p class="head-font mb-0"><span class="h3"><?php echo esc_html( $name ); ?></span><span class="primary-text"> <?php echo esc_html( $position ); ?></span></p>
+                        <p class="head-font mb-0"><span class="h4"><?php echo esc_html( $name ); ?></span><span class="primary-text"> <?php echo esc_html( $position ); ?></span></p>
                         <p class="head-font"><?php echo esc_html( $subhead ); ?></p>
                         <?php echo do_shortcode( $bio ); ?>
                     </div>
@@ -136,7 +136,7 @@ get_header();?>
                 ?>
                 <div class="row team-content align-items-center ">
                     <div class="col-md-8 <?php echo esc_attr( $align ); ?>">
-                        <p class="head-font mb-0"><span class="h3"><?php echo esc_html( $name ); ?></span><span class="primary-text"> <?php echo esc_html( $position ); ?></span></p>
+                        <p class="head-font mb-0"><span class="h4"><?php echo esc_html( $name ); ?></span><span class="primary-text"> <?php echo esc_html( $position ); ?></span></p>
                         <p class="head-font"><?php echo esc_html( $subhead ); ?></p>
                         <?php echo do_shortcode( $bio ); ?>
                     </div>
@@ -227,7 +227,7 @@ get_header();?>
                     ?>
                     <h2 class="mb-3"><?php echo esc_html( $r_header ); ?></h2>
                     <div class="rental-copy"><?php echo do_shortcode( $r_copy  ); ?></div>
-                    <p class="h3 primary-text head-text"><?php echo esc_html( $r_sub_head ); ?></p>
+                    <p class="h4 primary-text head-font"><?php echo esc_html( $r_sub_head ); ?></p>
                     <div class="rental-sub-copy"><?php echo do_shortcode( $r_sub_copy ); ?></div>
                 </div>
                 <div class="col-lg-6">
@@ -235,6 +235,64 @@ get_header();?>
                 </div>
             </div>
             <a href="#contact" class="white-text button"><?php echo esc_html( get_field( 'contact_link_text' ) );?></a>
+        </div>
+    </section>
+
+    <!-- WORKS -->
+    <section class="works container">
+        <div class="row">
+            <div class="col-lg-6 works-text">
+                <?php
+                $works_header = get_field( 'works_heading' );
+                $film_works = get_field( 'video' );
+                $web_works = get_field( 'website' );
+                ?>
+                <?php if ( $works_header ) : ?>
+                <h2 class="secondary-text mb-3"><?php echo esc_html(  $works_header ); ?></h2>
+                <?php endif; ?>
+                <?php if ( get_field( 'works_copy' ) ) :?>
+                <div class="dark-grey-text"><?php echo do_shortcode( get_field( 'works_copy' ) );?></div>
+                <?php endif; ?>
+                <a href="" class="button dark-grey-text film-work-button me-4 active-button">Film & Video</a>
+                <a href="" class="button dark-grey-text web-work-button ">Web Design</a>
+            </div>
+        </div>
+        <!-- LIST OF FILMSS -->
+        <div class="film-works">
+            <?php foreach( $film_works as $item ) : ?>
+            <div class="row align-items-end">
+                <!-- image -->
+                <div class="works-media col-lg-6">
+                <?php embed_video($item['url'], $item['cover_photo'], null); ?>
+                </div>
+                <!-- copy -->
+                <div class="col-lg-6 works-content">
+                    <p class="h4 primary-text head-font"><?php echo esc_html( $item['subhead']); ?></p>
+                    <p class="head-font h3 dark-grey-tex"><?php echo do_shortcode( $item['title'] ); ?></p>
+                    <p class="dark-grey-tex"><?php echo do_shortcode( $item['content'] ); ?></p>
+               </div>
+            </div><!-- end of row -->
+            <?php endforeach; ?>
+            <a href="" class="d-inline-block mt-5 view-more-film button dark-grey-text">View All Videos</a>
+        </div>
+        <!-- LIST OF SITES -->
+        <div class="web-works">
+            <?php foreach( $web_works as $item ) : ?>
+            <div class="row align-items-end">
+                <!-- image -->
+                <div class="works-media col-lg-6">
+                <?php echo wp_get_attachment_image($item['cover_photo'], 'large', false );  ?>
+                </div>
+                <!-- copy -->
+                <div class="col-lg-6 works-content">
+                    <p class="h4 primary-text head-font"><?php echo esc_html( $item['subhead']); ?></p>
+                    <p class="head-font h3 dark-grey-tex"><?php echo do_shortcode( $item['title'] ); ?></p>
+                    <p class="dark-grey-tex"><?php echo do_shortcode( $item['content'] ); ?></p>
+                    <a href="?php echo esc_attr( $item['url'] );?>" class="button"><?php echo esc_url( $item['url'] );?></a>
+               </div>
+            </div><!-- end of row -->
+            <?php endforeach; ?>
+            <a href="" class="d-inline-block mt-5 view-more-film button dark-grey-text">View All Videos</a>
         </div>
     </section>
 

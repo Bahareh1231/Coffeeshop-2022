@@ -136,11 +136,11 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 h4, .h4 {
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
 
 .active-button {
@@ -435,16 +435,18 @@ header li {
 }
 .service-content li {
   margin-top: 15px;
+  display: flex;
 }
 .service-content li:before {
   content: "";
-  display: inline-block;
+  display: block;
   height: 10px;
   width: 10px;
   transform: rotate(-45deg);
   border-right: 3px solid #ff8200;
   border-bottom: 3px solid #ff8200;
   margin-right: 15px;
+  margin-top: 9px;
 }
 
 @media (max-width: 991px) {
@@ -460,4 +462,17 @@ header li {
   .service-title p {
     font-size: 1.5rem;
   }
+}
+.works {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.film-works .row,
+.web-works .row {
+  margin-top: 60px;
+}
+
+.works-content {
+  padding-left: 30px;
 }/*# sourceMappingURL=main.css.map */
