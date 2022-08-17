@@ -43,6 +43,7 @@ body {
   position: relative;
   font-family: "Ubuntu", serif;
   font-size: 18px;
+  color: #000;
 }
 
 ul {
@@ -128,11 +129,11 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
 }
 
 h2, .h2 {
-  font-size: 2.6rem;
+  font-size: 3.3rem;
 }
 
 h3, .h3 {
@@ -140,7 +141,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .active-button {
@@ -180,6 +181,11 @@ h4, .h4 {
   text-shadow: 0px 0.5px 3px rgb(156, 154, 154);
 }
 
+@media (max-width: 767px) {
+  h1, .h1 {
+    font-size: 3rem;
+  }
+}
 header {
   position: absolute;
   top: 0;
@@ -190,6 +196,14 @@ header {
 }
 header li {
   margin-right: 30px;
+}
+@media (max-width: 991px) {
+  .menu-item {
+    display: none;
+  }
+  .menu-item-188 {
+    display: block;
+  }
 }
 .hero {
   height: 100vh;
@@ -213,6 +227,10 @@ header li {
   max-width: 618px;
 }
 
+.hero-subhead {
+  font-size: 25px;
+}
+
 .quote {
   padding: 20px 0;
 }
@@ -225,7 +243,7 @@ header li {
   width: 100%;
   aspect-ratio: 16/9;
   overflow: hidden;
-  border-radius: 60px;
+  border-radius: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -314,7 +332,7 @@ header li {
 .team-wrap {
   border-radius: 50%;
   overflow: hidden;
-  height: 348px;
+  height: 238px;
 }
 
 .web-team {
@@ -324,30 +342,30 @@ header li {
 
 @media (max-width: 1399px) {
   .team-wrap {
-    height: 288px;
+    height: 193px;
   }
 }
 @media (max-width: 1199px) {
   .team-wrap {
     height: 227.99px;
   }
+  .team-content .order-lg-2 + .team-image {
+    padding-right: 15px;
+  }
 }
 @media (max-width: 991px) {
   .team-wrap {
     height: 227.98px;
+    width: 227.98px;
+    margin: 0 auto;
   }
   .team-image {
     padding-left: 15px;
     padding-right: 15px;
   }
-  .team-content .order-md-2 + .team-image {
-    padding-right: 15px;
-  }
 }
 @media (max-width: 767px) {
   .team-wrap {
-    width: 300px;
-    height: 300px;
     margin: 20px auto;
   }
 }
@@ -427,7 +445,7 @@ header li {
 
 .video-service .row,
 .web-service .row {
-  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .service-content {
@@ -470,9 +488,110 @@ header li {
 
 .film-works .row,
 .web-works .row {
-  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .works-content {
   padding-left: 30px;
+}
+
+.web-works a {
+  text-transform: lowercase;
+}
+.web-works .works-media img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 36px;
+}
+
+@media (max-width: 991px) {
+  .works-content {
+    margin-top: 30px;
+    padding-left: 15px;
+  }
+}
+.contact {
+  padding-top: 200px;
+}
+.contact h2 {
+  max-width: 300px;
+}
+
+input,
+textarea {
+  background-color: #f4f4f4;
+  border: none;
+  width: 100%;
+  padding: 12px 0 12px 18px;
+}
+input:focus-visible,
+textarea:focus-visible {
+  outline: solid 2px #ff8200;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #8b8a8a;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #8b8a8a;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #8b8a8a;
+}
+
+input {
+  margin-bottom: 12px;
+}
+
+textarea {
+  height: 150px;
+}
+
+form p {
+  color: #ff8200;
+}
+
+input[type=submit] {
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 10;
+  display: inline;
+  background: transparent;
+  display: flex;
+  color: #000;
+  padding: 0;
+  margin: 30px 0 0;
+}
+
+.submit-button.button, header a.submit-button {
+  height: 50px;
+  width: 137px;
+}
+.submit-button.button:before, header a.submit-button:before {
+  height: calc(100% - 16px);
+}
+
+footer {
+  padding-bottom: 130px;
+}
+
+.black-icon {
+  background-color: #383637;
+  padding: 4px 7px;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+.primary-icon {
+  background-color: #ff8200;
+  border-radius: 2px;
+  margin-right: 10px;
+  width: 32px;
+  height: 28.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=main.css.map */

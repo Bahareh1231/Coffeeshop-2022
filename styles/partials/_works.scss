@@ -5,9 +5,31 @@
 
 .film-works .row,
 .web-works .row {
-    margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 .works-content {
     padding-left: 30px;
+}
+
+.web-works {
+    a {
+        text-transform: lowercase;
+    }
+    .works-media {
+        img {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        border-radius: 36px;
+        }
+    }
+}
+
+@media(max-width: 991px) {
+    .works-content {
+        margin-top: 30px;
+        padding-left: 15px;
+    }
 }

@@ -12,3 +12,13 @@ header {
         @extend .button;
     }
 }
+
+@media (max-width: 991px) {
+    .menu-item {
+        display: none;
+        
+    }
+    .menu-item-188 {
+        display: block;
+    }
+}

@@ -1,0 +1,22 @@
+footer {
+    padding-bottom: 130px;
+}
+
+.black-icon {
+    background-color: $dark-grey;
+    padding: 4px 7px;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
+.primary-icon {
+    background-color: $primary;
+
+    border-radius: 2px;
+    margin-right: 10px;
+    width: 32px;
+    height: 28.5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}

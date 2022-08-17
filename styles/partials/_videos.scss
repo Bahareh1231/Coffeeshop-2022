@@ -3,7 +3,7 @@
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    border-radius: 60px;
+    border-radius: 36px;
     @include display-center;
     a {
         @include position-absolute;

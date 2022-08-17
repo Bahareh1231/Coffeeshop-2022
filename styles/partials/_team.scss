@@ -24,7 +24,7 @@
 .team-wrap {
     border-radius: 50%;
     overflow: hidden;
-    height: 348px;
+    height: 238px;
 }
 
 .web-team {
@@ -34,7 +34,7 @@
 
 @media(max-width: 1399px) {
     .team-wrap {
-        height: 288px;
+        height: 193px;
     }
 }
 
@@ -42,20 +42,9 @@
     .team-wrap {
         height: 227.99px;
     }
-}
-
-@media(max-width: 991px) {
-    .team-wrap {
-        height: 227.98px;
-    }
-
-    .team-image {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
 
     .team-content {
-        .order-md-2 {
+        .order-lg-2 {
             & + .team-image {
                 padding-right: 15px;
             }
@@ -63,10 +52,22 @@
     }
 }
 
+@media(max-width: 991px) {
+    .team-wrap {
+        height: 227.98px;
+        width: 227.98px;
+        margin: 0 auto;
+    }
+
+    .team-image {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}
+
 @media(max-width: 767px) {
     .team-wrap {
-        width: 300px;
-        height: 300px;
         margin: 20px auto;
     }
 }

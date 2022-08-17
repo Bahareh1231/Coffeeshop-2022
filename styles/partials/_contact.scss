@@ -1,0 +1,55 @@
+.contact {
+    padding-top: 200px;
+    h2 {
+        max-width: 300px;
+    }
+}
+
+input,
+textarea {
+    background-color: $light-grey;
+    border: none;
+    width: 100%;
+    padding: 12px 0 12px 18px;
+    &:focus-visible {
+        outline: solid 2px $primary;
+    }
+    &::placeholder {
+        color: #8b8a8a;
+    }
+}
+
+input {
+    margin-bottom: 12px;
+}
+
+textarea {
+    height: 150px;
+}
+
+form {
+    p {
+        color: $primary;
+    }
+}
+
+input[type=submit] {
+    font-weight: $bold;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+    display: inline;
+    background: transparent;
+    display: flex;
+    color: $black;
+    padding: 0;
+    margin: 30px 0 0;   
+}
+
+.submit-button.button {
+    height: 50px;
+    width: 137px;
+    &:before {
+        height: calc(100% - 16px);
+    }
+}
