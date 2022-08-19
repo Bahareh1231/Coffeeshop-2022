@@ -19,7 +19,7 @@
 }
 
 .service-image-wrap {
-    padding-left: 21.6px;
+    padding-right: 35px;
 }
 
 .service-title {
@@ -48,7 +48,7 @@
 .web-service {
     @extend .transition;
     .row {
-        margin-bottom: 60px;
+        margin-bottom: 100px;
     }
 }
 
@@ -76,7 +76,7 @@
     }
 
     .service-image-wrap {
-        padding-left: 21.6px;
+        padding-right: 21.6px;
     }
 }
 

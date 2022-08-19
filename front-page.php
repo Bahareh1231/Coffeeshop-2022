@@ -57,7 +57,7 @@ get_header();?>
                     <?php if ( get_field( 'feature_copy' ) ) :?>
                     <div class="dark-grey-text"><?php echo do_shortcode( get_field( 'feature_copy' ) );?></div>
                     <?php endif; ?>
-                    <a href="" class="button dark-grey-text film-button me-4 active-button">Feature Reel</a>
+                    <a href="" class="button dark-grey-text film-button me-5 active-button">Feature Reel</a>
                     <a href="" class="button dark-grey-text drone-button ">Drone Reel</a>
                 </div>
                 <div class="col-lg-6 reel-videos">
@@ -94,7 +94,7 @@ get_header();?>
                     <?php if ( $team_copy ) : ?>
                     <div><?php echo do_shortcode( $team_copy ); ?></div>
                     <?php endif; ?>
-                    <a href="" class="white-text button view-film-team active-button me-4">Videography Team</a>
+                    <a href="" class="white-text button view-film-team active-button me-5">Videography Team</a>
                     <a href="" class="white-text button  view-web-team  ">Web Design Team</a>
                 </div>
             </div>
@@ -245,7 +245,7 @@ get_header();?>
                     <p class="h4 primary-text head-font"><?php echo esc_html( $r_sub_head ); ?></p>
                     <div class="rental-sub-copy"><?php echo do_shortcode( $r_sub_copy ); ?></div>
                 </div>
-                <div class="col-lg-6 d-none d-sm-block">
+                <div class="col-lg-6 d-none d-sm-block rental-image-wrap">
                     <div class="rental-image"><?php echo wp_get_attachment_image( get_field( 'rental_image' ), 'large', false, array( 'class' => 'object-cover' ) );?></div>
                 </div>
             </div>

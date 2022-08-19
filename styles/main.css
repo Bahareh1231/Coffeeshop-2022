@@ -44,7 +44,7 @@ body {
   font-family: "Ubuntu", serif;
   font-size: 18px;
   color: #000;
-  line-height: 21px;
+  line-height: 23px;
 }
 
 ul {
@@ -154,6 +154,8 @@ h4, .h4 {
   text-transform: uppercase;
   position: relative;
   z-index: 10;
+  display: inline-block;
+  transform: translateX(7px);
 }
 .button:before, header a:before {
   content: "";
@@ -272,6 +274,8 @@ header li {
 
 .hero-subhead {
   font-size: 25px;
+  line-height: 28px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 767px) {
@@ -352,11 +356,11 @@ header li {
 }
 
 .reel-text {
-  padding-left: 21.6px;
+  padding-right: 35px;
 }
 
 .reel-videos {
-  padding-left: 21.6px;
+  padding-left: 35px;
 }
 
 .video-embed.drone {
@@ -367,7 +371,7 @@ header li {
 
 @media (max-width: 991px) {
   .reel-text {
-    padding-left: 21.6px;
+    padding-right: 21.6px;
   }
   .reel-videos {
     padding-left: 21.6px;
@@ -459,7 +463,10 @@ header li {
   aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: 36px 36px 36px 36px;
-  padding-left: 21.6px;
+}
+
+.rental-image-wrap {
+  padding-left: 35px;
 }
 
 .rental-copy {
@@ -512,7 +519,7 @@ header li {
 }
 
 .service-image-wrap {
-  padding-left: 21.6px;
+  padding-right: 35px;
 }
 
 .service-title {
@@ -538,7 +545,7 @@ header li {
 
 .video-service .row,
 .web-service .row {
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
 
 .service-content li {
@@ -562,7 +569,7 @@ header li {
     margin-top: 30px;
   }
   .service-image-wrap {
-    padding-left: 21.6px;
+    padding-right: 21.6px;
   }
 }
 @media (max-width: 576px) {
@@ -604,11 +611,11 @@ header li {
 
 .film-works .row,
 .web-works .row {
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
 
 .works-media {
-  padding-left: 21.6px;
+  padding-right: 35px;
 }
 
 .web-works {
@@ -649,7 +656,7 @@ header li {
     margin-top: 30px;
   }
   .works-media {
-    padding-left: 21.6px;
+    padding-right: 21.6px;
   }
 }
 .contact {
@@ -714,9 +721,12 @@ input[type=submit] {
   height: calc(100% - 16px);
 }
 
-.footer-form,
+.footer-form {
+  padding-left: 35px;
+}
+
 .footer-content {
-  padding-left: 21.6px;
+  padding-right: 35px;
 }
 
 @media (max-width: 767px) {

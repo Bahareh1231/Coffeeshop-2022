@@ -54,9 +54,12 @@ input[type=submit] {
     }
 }
 
-.footer-form,
+.footer-form {
+    padding-left: 35px;
+}
+
 .footer-content {
-    padding-left: 21.6px;
+    padding-right: 35px;
 }
 
 @media(max-width:767px) {

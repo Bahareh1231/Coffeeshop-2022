@@ -61,7 +61,7 @@ body {
     font-family: 'Ubuntu', serif;
     font-size: 18px;
     color: $black;
-    line-height: 21px;
+    line-height: 23px;
 }
 
 
@@ -180,6 +180,8 @@ h4, .h4 {
     text-transform: uppercase;
     position: relative;
     z-index: 10;
+    display: inline-block;
+    transform: translateX(7px);
     &:before {
         content: '';
         display: block;
