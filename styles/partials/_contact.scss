@@ -47,7 +47,7 @@ input[type=submit] {
 }
 
 .submit-button.button {
-    height: 50px;
+    height: 44px;
     width: 137px;
     &:before {
         height: calc(100% - 16px);
@@ -56,5 +56,12 @@ input[type=submit] {
 
 .footer-form,
 .footer-content {
-    padding-right: 30px;
+    padding-left: 21.6px;
+}
+
+@media(max-width:767px) {
+    .contact {
+        padding-top: 100px;
+        padding-bottom: 80px;
+    }
 }

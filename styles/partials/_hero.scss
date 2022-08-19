@@ -11,7 +11,7 @@
     &:before {
         @include position-absolute;
         z-index: 1;
-        background-color: rgba($black, 0.34);
+        background-color: rgba($black, 0.45);
         content: '';
         display: block;
     }
@@ -32,4 +32,15 @@
 
 .hero-subhead {
     font-size: 25px;
+}
+
+@media(max-width:767px) {
+    .hero {
+        padding-top: 150px
+    }
+
+    .hero-subhead {
+        font-size: 23px;
+        line-height: 25px;
+    }
 }

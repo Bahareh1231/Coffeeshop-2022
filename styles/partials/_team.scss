@@ -49,14 +49,6 @@
     .team-wrap {
         height: 227.99px;
     }
-
-    .team-content {
-        .order-lg-2 {
-            & + .team-image {
-                padding-right: 15px;
-            }
-        }
-    }
 }
 
 @media(max-width: 991px) {
@@ -67,8 +59,20 @@
     }
 
     .team-image {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 21.6px;
+        padding-left: 21.6px;
+        order: 1;
+    }
+
+    .team-bio {
+        order: 2;
+        margin-top: 23px;
+    }
+
+    .bio-detail {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 30px;
     }
 
 }
@@ -76,5 +80,11 @@
 @media(max-width: 767px) {
     .team-wrap {
         margin: 20px auto;
+    }
+
+    .view-web-team,
+    .view-film-team {
+        display: inline-block;
+        margin-top: 40px;
     }
 }

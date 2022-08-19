@@ -13,7 +13,7 @@
 
     <header>
 		<div class="container">
-        <?php echo wp_get_attachment_image( get_field( 'white_logo' ), 'medium', false, array( 'class' => 'header-logo' ) );?>
+        <?php echo wp_get_attachment_image( get_field( 'white_logo' ), 'medium', false, array( 'class' => 'header-logo d-none d-md-block' ) );?>
             <h1 class="visually-hidden"><?php echo get_bloginfo( 'name' ); ?></h1>
         <?php 
             $args = ( array(

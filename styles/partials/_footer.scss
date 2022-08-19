@@ -1,5 +1,5 @@
 footer {
-    padding-bottom: 130px;
+    padding-bottom: 80px;
 }
 
 .black-icon {
@@ -24,5 +24,17 @@ footer {
     justify-content: center;
     &:hover {
         background-color: $dark-grey
+    }
+}
+
+@media(max-width:767px) {
+    .socials {
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 33px;
+    }
+
+    footer {
+        padding-bottom: 33px;
     }
 }

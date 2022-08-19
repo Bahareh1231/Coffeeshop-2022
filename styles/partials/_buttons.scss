@@ -4,6 +4,8 @@
     position: relative;
     z-index: 10;
     font-size: 20px;
+    display: inline-block;
+    transform: translateX(7px);
     &:before {
         content: '';
         display: block;

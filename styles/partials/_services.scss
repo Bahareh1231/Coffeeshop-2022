@@ -19,7 +19,7 @@
 }
 
 .service-image-wrap {
-    padding-right: 30px;
+    padding-left: 21.6px;
 }
 
 .service-title {
@@ -32,6 +32,8 @@
     p {
         margin: 0;
         font-size: 1.9rem;
+        font-size: 1.9rem;
+        line-height: normal;
     }
 }
 
@@ -74,7 +76,7 @@
     }
 
     .service-image-wrap {
-        padding-left: 15px;
+        padding-left: 21.6px;
     }
 }
 
@@ -82,6 +84,42 @@
     .service-title {
         p {
             font-size: 1.5rem;
+        }
+    }
+}
+
+@media(max-width:575px) {
+    .video-service,
+    .web-service {
+        &.container {
+            padding-right: calc(var(--bs-gutter-x) * 0);
+            padding-left: calc(var(--bs-gutter-x) * 0);
+            
+        }
+        .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    .service-image-wrap {
+        padding-left: 0;
+        padding-right: 0;
+        max-width:100vw;
+    }
+
+    .service-image {
+        border-radius: 0;
+        aspect-ratio: 5 / 4;
+    }
+
+    .service-title {
+        padding: 20px 35px 0 24px;
+    }
+
+    .service-content {
+        li {
+            margin-top: 29px
         }
     }
 }

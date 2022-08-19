@@ -2,5 +2,19 @@
     padding: 20px 0;
     p {
         margin: 0;
+        line-height: normal;
+    }
+}
+
+@media(max-width: 767px) {
+    .quote {
+        padding: 50px 0;
+        p.large {
+            font-size: 1.7rem;
+        }
+        p.white-text {
+            margin-top: 10px;
+            font-size: 1.3rem;
+        }
     }
 }

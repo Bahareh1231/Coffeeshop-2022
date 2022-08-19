@@ -21,6 +21,7 @@
 		<div class="footer-icons mt-4">
 			<a href="mailto:<?php echo esc_attr( get_field( 'email' ) ); ?>" class="black-icon bold white-text">EMAIL</a>
 			<a href="tel:<?php echo esc_attr( get_field( 'phone_number' ) ); ?>" class="black-icon bold white-text">PHONE</a>
+			<span class="socials">
 			<?php
 			$social = get_field( 'social' );
 			foreach ( $social as $item ) :
@@ -41,9 +42,11 @@
 					$bg = 'black-icon';
 				}
 			?>
+			
 			<a href="<? echo esc_url( $item['url'] ); ?>" class="<?php echo esc_attr( $bg ); ?> white-text"><i class="white-text fa-brands fa-<?php echo esc_attr( $icon ); ?>"></i></a>
 			
 			<?php endforeach; ?>
+			</span>
 		</div>
 		<p class="credits mt-3 small dark-grey-text">@<?php echo get_the_date('Y') . ' ' . get_bloginfo('name'); ?>. All Rights Reserved</p>
 	</div>

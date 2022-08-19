@@ -61,6 +61,7 @@ body {
     font-family: 'Ubuntu', serif;
     font-size: 18px;
     color: $black;
+    line-height: 21px;
 }
 
 
@@ -216,7 +217,16 @@ h4, .h4 {
 
 @media(max-width: 767px) {
     h1, .h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
+    }
+
+    h2, .h2 {
+        font-size: 2.5rem;
+    } 
+
+    .row>* {
+        padding-right: calc(var(--bs-gutter-x) * .9);
+        padding-left: calc(var(--bs-gutter-x) * .9);
     }
 }
 
