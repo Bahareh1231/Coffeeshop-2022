@@ -12,10 +12,14 @@
     
 }
 
+.video-embed.film {
+    @extend .transition;
+}
+
 .video-embed.drone {
     display: none;
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(30px);
     @extend .transition;
 }
 

@@ -35,8 +35,16 @@
     }
 }
 
+.web-service {
+    display: none;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+
 .video-service,
 .web-service {
+    @extend .transition;
     .row {
         margin-bottom: 60px;
     }

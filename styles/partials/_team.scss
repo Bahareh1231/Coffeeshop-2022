@@ -9,7 +9,7 @@
 
 .team-content {
     padding-top: 45px;
-    .order-md-2 {
+    .order-lg-2 {
         & + .team-image {
             padding-right: 80px;
             padding-left: 0;
@@ -22,6 +22,7 @@
 }
 
 .team-wrap {
+    
     border-radius: 50%;
     overflow: hidden;
     height: 238px;
@@ -30,6 +31,12 @@
 .web-team {
     display: none;
     opacity: 0;
+    transform: translateY(50px);
+    @extend .transition;
+}
+
+.film-team {
+    @extend .transition;
 }
 
 @media(max-width: 1399px) {

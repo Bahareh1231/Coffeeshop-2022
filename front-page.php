@@ -39,7 +39,7 @@ get_header();?>
     </section>
 
     <!-- FEATURE REELS -->
-    <section class="feature-reel">
+    <section class="feature-reel" id="reel">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 reel-text">
@@ -93,8 +93,8 @@ get_header();?>
                     <?php if ( $team_copy ) : ?>
                     <div><?php echo do_shortcode( $team_copy ); ?></div>
                     <?php endif; ?>
-                    <a href="" class="white-text button me-4 view-web-team active-button ">Web Design Team</a>
-                    <a href="" class="white-text button view-film-team">Filmography Team</a>
+                    <a href="" class="white-text button view-film-team active-button me-4">Videography Team</a>
+                    <a href="" class="white-text button  view-web-team  ">Web Design Team</a>
                 </div>
             </div>
             <div class="film-team">
@@ -129,7 +129,7 @@ get_header();?>
 
             <div class="web-team">
                 <?php
-                foreach( $film_team as $item ) :
+                foreach( $web_team as $item ) :
                 $name     = $item['name'];
                 $position = $item['position'];
                 $subhead  = $item['subhead'];
@@ -271,7 +271,7 @@ get_header();?>
             $i = 0;
             foreach( $film_works as $item ) :
             ?>
-            <div class="row align-items-center <?php echo esc_attr( 'film-' . $i ); ?>">
+            <div class="row align-items-center film-work-item <?php echo esc_attr( 'film-' . $i ); ?>">
                 <!-- image -->
                 <div class="works-media col-lg-6">
                 <?php embed_video($item['url'], $item['cover_photo'], null); ?>
@@ -287,7 +287,7 @@ get_header();?>
             $i++;
             endforeach;
             ?>
-            <a href="" class="d-inline-block mt-5 view-more-film button dark-grey-text">View All Videos</a>
+            <a href="" class="mt-5 view-more-film button dark-grey-text">View All Videos</a>
         </div>
         <!-- LIST OF SITES -->
         <div class="web-works">
@@ -295,7 +295,7 @@ get_header();?>
             $i = 1;
             foreach( $web_works as $item ) :
             ?>
-            <div class="row align-items-center <?php echo esc_attr( 'web-' . $i ); ?>">
+            <div class="row align-items-center web-work-item <?php echo esc_attr( 'web-' . $i ); ?>">
                 <!-- image -->
                 <div class="works-media col-lg-6">
                 <?php echo wp_get_attachment_image($item['cover_photo'], 'large', false, array( 'class' => 'object-cover' ) );  ?>
@@ -318,7 +318,7 @@ get_header();?>
             $i++;
             endforeach;
             ?>
-            <a href="" class="d-inline-block mt-5 view-more-web button dark-grey-text">View More</a>
+            <a href="" class="mt-5 view-more-web button dark-grey-text">View More</a>
         </div>
     </section>
     
