@@ -3,7 +3,7 @@
 <footer>
 	<section class="contact container" id="contact">
         <div class="row align-items-center">
-            <div class="col-xl-5 col-lg-6">
+            <div class="col-lg-6 footer-content">
                 <?php if ( get_field('footer_heading') ) : ?>
                 <h2 class="secondary-text mb-3"><?php echo esc_html(  get_field('footer_heading') ); ?></h2>
                 <?php endif; ?>
@@ -11,7 +11,7 @@
                 <div class="dark-grey-text"><?php echo do_shortcode( get_field( 'footer_copy' ) );?></div>
                 <?php endif; ?>
             </div>
-            <div class="col-xl-5 col-lg-6">
+            <div class="col-lg-6 footer-form">
 				<?php echo do_shortcode( '[contact-form-7 id="280" title="Contact form 1"]' ); ?>
 			</div>
         </div>

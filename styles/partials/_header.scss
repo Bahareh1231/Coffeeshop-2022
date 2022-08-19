@@ -13,6 +13,13 @@ header {
     }
 }
 
+.header-logo {
+    max-width: 300px;
+    position: absolute;
+    z-index: 10;
+}
+
+
 @media (max-width: 991px) {
     .menu-item {
         display: none;

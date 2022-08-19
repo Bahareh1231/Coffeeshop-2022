@@ -15,6 +15,8 @@
 .video-embed.drone {
     display: none;
     opacity: 0;
+    transform: translateY(10px);
+    @extend .transition;
 }
 
 @media(max-width: 991px) {

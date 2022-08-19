@@ -7,11 +7,14 @@ footer {
     padding: 4px 7px;
     border-radius: 2px;
     margin-right: 10px;
+    &:hover {
+        background-color: $primary;
+        color: $white;
+    }
 }
 
 .primary-icon {
     background-color: $primary;
-
     border-radius: 2px;
     margin-right: 10px;
     width: 32px;
@@ -19,4 +22,7 @@ footer {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    &:hover {
+        background-color: $dark-grey
+    }
 }

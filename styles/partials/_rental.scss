@@ -9,6 +9,7 @@
     aspect-ratio: 16 / 9;
     overflow: hidden;
     border-radius: 36px 36px 36px 36px;
+    padding-leftt: 30px;
 }
 
 .rental-copy {
@@ -17,7 +18,6 @@
 }
 
 .rental-sub-copy {
-    padding-right: 30px;
     li {
         margin-top: 15px;
         &:before {
@@ -36,7 +36,11 @@
 
 @media(max-width: 991px) {
     .rental-sub-copy {
-        padding-left: 15px;
         margin-bottom: 30px;
+    }
+    
+    .rental-image {
+        padding-left: 15px;
+
     }
 }

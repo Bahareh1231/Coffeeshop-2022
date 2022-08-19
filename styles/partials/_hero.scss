@@ -6,15 +6,28 @@
 
 .hero-media {
     @include position-absolute;
-    z-index: -1;
-}
-
-.header-logo {
-    max-width: 300px;
+    z-index: 0;
+    overflow: hidden;
+    &:before {
+        @include position-absolute;
+        z-index: 1;
+        background-color: rgba($black, 0.34);
+        content: '';
+        display: block;
+    }
+    video {
+        position: absolute;
+        height: auto;
+        width: auto;
+        min-height: 100%;
+        min-width: 100%;
+    }
 }
 
 .hero-content {
     max-width: 618px;
+    position: relative;
+    z-index: 10;
 }
 
 .hero-subhead {

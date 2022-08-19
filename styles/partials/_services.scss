@@ -18,6 +18,10 @@
     }
 }
 
+.service-image-wrap {
+    padding-right: 30px;
+}
+
 .service-title {
     position: absolute;
     z-index: 2;
@@ -39,7 +43,6 @@
 }
 
 .service-content {
-    padding-left: 30px;
     li {
         margin-top: 15px;
         display: flex;
@@ -59,7 +62,6 @@
 
 @media(max-width: 991px) {
     .service-content {
-        padding-left: 0px;
         margin-top: 30px;
     }
 

@@ -8,12 +8,12 @@
     margin-bottom: 60px;
 }
 
-.works-content {
-    padding-left: 30px;
+.works-media {
+    padding-right: 30px;
 }
 
 .web-works {
-    a {
+    a.site-url {
         text-transform: lowercase;
     }
     .works-media {
@@ -30,6 +30,9 @@
 @media(max-width: 991px) {
     .works-content {
         margin-top: 30px;
+    }
+    
+    .works-media {
         padding-left: 15px;
     }
 }

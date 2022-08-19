@@ -12,17 +12,25 @@ get_header();?>
         <div class="hero-media">
         <?php
         $media_type = get_field( 'video_or_image_hero' );
-        if ( $media_type === 'video' && $hero_video ) : ?>
+        if ( $media_type === 'video' || $media_type === 'videourl' ) :
+            // if video clip
+            if ( $media_type === 'video' && ! wp_is_mobile() ) : ?>
             <video preload="true" playsinline autoplay loop muted src="<?php echo wp_get_attachment_url( get_field( 'hero_video' ) ); ?>"></video>
-        <?php else : ?>
+            <!-- if vimeo video file link -->
+            <?php elseif ( $media_type === 'videourl' && ! wp_is_mobile() ) : ?>
+            <video  preload="auto" autoplay="" loop="" muted="">
+                <source src="<?php echo esc_url( get_field( 'hero_video_url' ) ); ?>" type="video/mp4">
+            </video>
+            <?php elseif ( wp_is_mobile() ) : ?>
+                <?php echo wp_get_attachment_image( get_field( 'video_fallback' ), 'large', false, array( 'class' => 'object-cover') ); ?>
+            <?php endif; ?>
+        <?php elseif ( $media_type === 'image' ) : ?>
             <?php echo wp_get_attachment_image( get_field( 'hero_image' ), 'large', false, array( 'class' => 'object-cover') ); ?>
         <?php endif; ?>
         </div><!-- end of hero-media -->
         
         <div class="container">
             <div class="hero-content">
-                <?php echo wp_get_attachment_image( get_field( 'white_logo' ), 'medium', false, array( 'class' => 'header-logo' ) );?>
-                <h1 class="visually-hidden"><?php echo get_bloginfo( 'name' ); ?></h1>
                 <?php if ( get_field( 'hero_header' ) ): ?><p class="h1 hero-header text-uppercase white-text"><?php echo esc_html( get_field( 'hero_header' ) ); ?></p><?php endif; ?>
                 <?php if ( get_field( 'hero_subheader' ) ): ?><p class="hero-subhead white-text"><?php echo esc_html( get_field( 'hero_subheader' ) ); ?></p><?php endif; ?>
                 <?php if ( get_field( 'hero_link' ) ): ?><a href="/<?php echo esc_html( get_field( 'hero_link' )['url'] ); ?>" class="button white-text text-uppercase bold"><?php echo esc_html( get_field( 'hero_link' )['text'] ); ?></a><?php endif; ?>
@@ -34,7 +42,7 @@ get_header();?>
     <section class="feature-reel">
         <div class="container">
             <div class="row">
-                <div class="col-xl-5 col-lg-6 reel-text">
+                <div class="col-lg-6 reel-text">
                     <?php
                     $reel_header = get_field( 'feature_header' );
                     if ( $reel_header ) {
@@ -51,7 +59,7 @@ get_header();?>
                     <a href="" class="button dark-grey-text film-button me-4 active-button">Film Reel</a>
                     <a href="" class="button dark-grey-text drone-button ">Drone Reel</a>
                 </div>
-                <div class="col-xl-5 col-lg-6 reel-videos">
+                <div class="col-lg-6 reel-videos">
                     <?php
                     foreach( get_field( 'feature_reels' ) as $item ) : 
                     $reel_url   = $item['url'];
@@ -156,7 +164,7 @@ get_header();?>
     <!-- SERVICES -->
     <section class="services container">
         <div class="row mb-5">
-            <div class="col-xl-5 col-lg-6 services-text">
+            <div class="col-lg-6 services-text">
                 <?php
                 $services_header = get_field( 'services_header' );
                 $video_service = get_field( 'videography' );
@@ -177,14 +185,14 @@ get_header();?>
             <?php foreach( $video_service as $item ) : ?>
             <div class="row align-items-center">
                 <!-- image -->
-               <div class="service-image-wrap col-xl-5 col-lg-6">
+               <div class="service-image-wrap col-lg-6">
                     <div class="service-image">
                         <?php echo wp_get_attachment_image($item['image'], 'large', false, array( 'class' => 'object-cover' )) ; ?>
                         <div class="service-title"><p class="primary-text head-font"><?php echo esc_html( $item['header']) ; ?></p></div>
                     </div>
                </div>
                <!-- copy -->
-               <div class="col-xl-5 col-lg-6">
+               <div class="col-lg-6">
                     <div class="service-content">
                     <?php echo do_shortcode( $item['copy'] );?>
                     </div>
@@ -197,14 +205,14 @@ get_header();?>
             <?php foreach( $web_service as $item ) : ?>
             <div class="row align-items-center">
                 <!-- image -->
-               <div class="service-image-wrap col-xl-5 col-lg-6">
+               <div class="service-image-wrap col-lg-6">
                     <div class="service-image">
                         <?php echo wp_get_attachment_image($item['image'], 'large', false, array( 'class' => 'object-cover')) ; ?>
                         <div class="service-title"><p class="primary-text head-font"><?php echo esc_html( $item['header']) ; ?></p></div>
                     </div>
                </div>
                <!-- copy -->
-               <div class="col-xl-5 col-lg-6">
+               <div class="col-lg-6">
                     <div class="service-content">
                     <?php echo do_shortcode( $item['copy'] );?>
                     </div>
@@ -218,7 +226,7 @@ get_header();?>
     <section class="black-bg white-text rental">
         <div class="container">
             <div class="row align-items-end justify-space-between mb-5">
-                <div class="col-xl-5 col-lg-6">
+                <div class="col-lg-6">
                     <?php
                     $r_header   = get_field( 'rental_header' );
                     $r_copy     = get_field( 'rental_copy' );
@@ -230,7 +238,7 @@ get_header();?>
                     <p class="h4 primary-text head-font"><?php echo esc_html( $r_sub_head ); ?></p>
                     <div class="rental-sub-copy"><?php echo do_shortcode( $r_sub_copy ); ?></div>
                 </div>
-                <div class="col-xl-5 col-lg-6">
+                <div class="col-lg-6">
                     <div class="rental-image"><?php echo wp_get_attachment_image( get_field( 'rental_image' ), 'large', false, array( 'class' => 'object-cover' ) );?></div>
                 </div>
             </div>
@@ -241,7 +249,7 @@ get_header();?>
     <!-- WORKS -->
     <section class="works container">
         <div class="row mb-5">
-            <div class="col-xl-5 col-lg-6 works-text">
+            <div class="col-lg-6 works-text">
                 <?php
                 $works_header = get_field( 'works_heading' );
                 $film_works = get_field( 'video' );
@@ -259,32 +267,41 @@ get_header();?>
         </div>
         <!-- LIST OF FILMSS -->
         <div class="film-works">
-            <?php foreach( $film_works as $item ) : ?>
-            <div class="row align-items-center">
+            <?php
+            $i = 0;
+            foreach( $film_works as $item ) :
+            ?>
+            <div class="row align-items-center <?php echo esc_attr( 'film-' . $i ); ?>">
                 <!-- image -->
-                <div class="works-media col-xl-5 col-lg-6">
+                <div class="works-media col-lg-6">
                 <?php embed_video($item['url'], $item['cover_photo'], null); ?>
                 </div>
                 <!-- copy -->
-                <div class="col-xl-5 col-lg-6 works-content">
+                <div class="col-lg-6 works-content">
                     <p class="h4 mb-0 primary-text head-font"><?php echo esc_html( $item['subhead']); ?></p>
                     <p class="head-font h3 dark-grey-tex"><?php echo do_shortcode( $item['title'] ); ?></p>
                     <p class="dark-grey-tex"><?php echo do_shortcode( $item['content'] ); ?></p>
                </div>
             </div><!-- end of row -->
-            <?php endforeach; ?>
+            <?php 
+            $i++;
+            endforeach;
+            ?>
             <a href="" class="d-inline-block mt-5 view-more-film button dark-grey-text">View All Videos</a>
         </div>
         <!-- LIST OF SITES -->
         <div class="web-works">
-            <?php foreach( $web_works as $item ) : ?>
-            <div class="row align-items-center">
+            <?php
+            $i = 1;
+            foreach( $web_works as $item ) :
+            ?>
+            <div class="row align-items-center <?php echo esc_attr( 'web-' . $i ); ?>">
                 <!-- image -->
-                <div class="works-media col-xl-5 col-lg-6">
+                <div class="works-media col-lg-6">
                 <?php echo wp_get_attachment_image($item['cover_photo'], 'large', false, array( 'class' => 'object-cover' ) );  ?>
                 </div>
                 <!-- copy -->
-                <div class="col-xl-5 col-lg-6  works-content">
+                <div class="col-lg-6  works-content">
                     <p class="h4 mb-0 primary-text head-font"><?php echo esc_html( $item['subhead']); ?></p>
                     <p class="head-font h3 dark-grey-tex"><?php echo do_shortcode( $item['title'] ); ?></p>
                     <p class="dark-grey-tex"><?php echo do_shortcode( $item['content'] ); ?></p>
@@ -294,10 +311,13 @@ get_header();?>
                     $web_url = str_replace('www.', '', $web_url );
                     $web_url = str_replace('/', '', $web_url );
                     ?>
-                    <a target="_blank" href="<?php echo esc_attr( $item['url'] );?>" class="button secondary-text"><?php echo esc_html( $web_url ); ?></a>
+                    <a target="_blank" href="<?php echo esc_attr( $item['url'] );?>" class="button secondary-text site-url"><?php echo esc_html( $web_url ); ?></a>
                </div>
             </div><!-- end of row -->
-            <?php endforeach; ?>
+            <?php 
+            $i++;
+            endforeach;
+            ?>
             <a href="" class="d-inline-block mt-5 view-more-web button dark-grey-text">View More</a>
         </div>
     </section>
