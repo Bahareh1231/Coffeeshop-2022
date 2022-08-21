@@ -80,15 +80,13 @@
     }
 }
 
-@media(max-width: 576px) {
-    .service-title {
-        p {
-            font-size: 1.5rem;
-        }
-    }
-}
 
 @media(max-width:575px) {
+    .service-title {
+        p {
+            font-size: 2rem;
+        }
+    }
     .video-service,
     .web-service {
         &.container {
@@ -110,7 +108,7 @@
 
     .service-image {
         border-radius: 0;
-        aspect-ratio: 5 / 4;
+        aspect-ratio: 1 / 1;
     }
 
     .service-title {

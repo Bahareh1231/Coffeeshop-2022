@@ -14,9 +14,28 @@ header {
 }
 
 .header-logo {
-    max-width: 300px;
+    max-width: 162px;
     position: absolute;
     z-index: 10;
+    opacity: 0;
+    animation: fadein 1.5s linear forwards;
+    z-index: -1;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        z-index: 20;
+    }
 }
 
 
@@ -33,5 +52,7 @@ header {
 @media(max-width:767px) {
     .header-logo {
         position: static;
+        margin-bottom: 40px;
+        max-width: 204px;
     }
 }

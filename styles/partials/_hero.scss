@@ -1,7 +1,7 @@
 .hero {
     height: 100vh;
     position: relative;
-
+    padding-top: 260px;
 }
 
 .hero-media {
@@ -17,10 +17,12 @@
     }
     video {
         position: absolute;
-        height: auto;
-        width: auto;
-        min-height: 100%;
-        min-width: 100%;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-position: center;
+        object-fit: cover;
     }
 }
 
@@ -41,8 +43,10 @@
         padding-top: 150px
     }
 
+
     .hero-subhead {
         font-size: 23px;
         line-height: 25px;
+        margin-bottom: 40px;
     }
 }

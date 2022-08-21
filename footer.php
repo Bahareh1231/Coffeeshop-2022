@@ -2,7 +2,7 @@
 
 <footer>
 	<section class="contact container" id="contact">
-        <div class="row align-items-center">
+        <div class="row">
             <div class="col-lg-6 footer-content">
                 <?php if ( get_field('footer_heading') ) : ?>
                 <h2 class="secondary-text mb-3"><?php echo esc_html(  get_field('footer_heading') ); ?></h2>

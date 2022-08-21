@@ -25,7 +25,7 @@
     
     border-radius: 50%;
     overflow: hidden;
-    height: 238px;
+    height: 188px;
 }
 
 .web-team {
@@ -39,11 +39,11 @@
     @extend .transition;
 }
 
-@media(max-width: 1399px) {
-    .team-wrap {
-        height: 193px;
-    }
-}
+// @media(max-width: 1399px) {
+//     .team-wrap {
+//         height: 193px;
+//     }
+// }
 
 @media(max-width: 1199px) {
     .team-wrap {

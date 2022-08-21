@@ -31,8 +31,9 @@ get_header();?>
         
         <div class="container">
             <div class="hero-content">
-                <?php echo wp_get_attachment_image( get_field( 'white_logo' ), 'medium', false, array( 'class' => 'header-logo d-inline d-md-none' ) );?>
-                <?php if ( get_field( 'hero_header' ) ): ?><p class="h1 hero-header text-uppercase white-text"><?php echo esc_html( get_field( 'hero_header' ) ); ?></p><?php endif; ?>
+                <?php echo wp_get_attachment_image( get_field( 'white_logo' ), 'medium', false, array( 'class' => 'header-logo d-inline d-md-none', 'lazy' => false ) );?>
+                <h1 class="visually-hidden"><?php echo get_bloginfo( 'name' ); ?></h1>
+                <?php if ( get_field( 'hero_header' ) ): ?><p class="animate fadeup-header h1 hero-header text-uppercase white-text"><?php echo esc_html( get_field( 'hero_header' ) ); ?></p><?php endif; ?>
                 <?php if ( get_field( 'hero_subheader' ) ): ?><p class="hero-subhead white-text"><?php echo esc_html( get_field( 'hero_subheader' ) ); ?></p><?php endif; ?>
                 <?php if ( get_field( 'hero_link' ) ): ?><a href="/<?php echo esc_html( get_field( 'hero_link' )['url'] ); ?>" class="button white-text text-uppercase bold"><?php echo esc_html( get_field( 'hero_link' )['text'] ); ?></a><?php endif; ?>
             </div>
@@ -114,7 +115,7 @@ get_header();?>
                 }
                 ?>
                 <div class="row team-content align-items-center">
-                    <div class="col-xl-8 col-lg-7 team-bio <?php echo esc_attr( $align ); ?>">
+                    <div class="col-xl-9 col-lg-8 team-bio <?php echo esc_attr( $align ); ?>">
                         <p class="head-font mb-0 h4"><span class="h3"><?php echo esc_html( $name ); ?></span><span class="primary-text bio-detail"> <?php echo esc_html( $position ); ?></span></p>
                         <p class="head-font bio-hobby"><?php echo esc_html( $subhead ); ?></p>
                         <?php echo do_shortcode( $bio ); ?>
@@ -188,7 +189,7 @@ get_header();?>
             <?php foreach( $video_service as $item ) : ?>
             <div class="row align-items-center">
                 <!-- image -->
-               <div class="service-image-wrap col-lg-6">
+               <div class="service-image-wrap col-lg-6 animate">
                     <div class="service-image">
                         <?php echo wp_get_attachment_image($item['image'], 'large', false, array( 'class' => 'object-cover' )) ; ?>
                         <div class="service-title"><p class="primary-text head-font"><?php echo esc_html( $item['header']) ; ?></p></div>
@@ -280,8 +281,10 @@ get_header();?>
             ?>
             <div class="row align-items-center film-work-item <?php echo esc_attr( 'film-' . $i ); ?>">
                 <!-- image -->
-                <div class="works-media col-lg-6">
-                <?php embed_video($item['url'], $item['cover_photo'], null); ?>
+                <div class="works-media-wrap col-lg-6">
+                    <div class="works-media">
+                    <?php embed_video($item['url'], $item['cover_photo'], null); ?>
+                    </div>  
                 </div>
                 <!-- copy -->
                 <div class="col-lg-6 works-content">
@@ -304,8 +307,10 @@ get_header();?>
             ?>
             <div class="row align-items-center web-work-item <?php echo esc_attr( 'web-' . $i ); ?>">
                 <!-- image -->
-                <div class="works-media col-lg-6">
-                <?php echo wp_get_attachment_image($item['cover_photo'], 'large', false, array( 'class' => 'object-cover' ) );  ?>
+                <div class="works-media-wrap col-lg-6">
+                    <div class="works-media">
+                    <?php echo wp_get_attachment_image($item['cover_photo'], 'large', false, array( 'class' => 'object-cover', 'loading' => false, ) );  ?>
+                    </div>
                 </div>
                 <!-- copy -->
                 <div class="col-lg-6  works-content">

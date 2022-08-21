@@ -11,7 +11,7 @@
     }
 }
 
-.works-media {
+.works-media-wrap {
     padding-right: 35px;
 }
 
@@ -23,13 +23,9 @@
         text-transform: lowercase;
     }
     .works-media {
-        img {
-        position: relative;
-        width: 100%;
         aspect-ratio: 16/9;
         overflow: hidden;
         border-radius: 36px;
-        }
     }
 }
 
@@ -56,7 +52,7 @@
         margin-top: 30px;
     }
     
-    .works-media {
+    .works-media-wrap {
         padding-right: 21.6px;
     }
 }

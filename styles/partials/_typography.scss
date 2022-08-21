@@ -79,11 +79,20 @@ a {
     }
 }
 
+
+
+
 // MEDIA
 
 img {
     max-width: 100%;
     height: auto;
+    border: none;
+    outline: none;
+}
+
+img[src=""]{
+    content: "";
 }
 
 .object-cover {
@@ -217,9 +226,16 @@ h4, .h4 {
     transition: opacity 0.3s, transform 0.4s;
 }
 
+@media(min-width:1400px) {
+    .container {
+        max-width: 1120px;
+    }
+    
+}
+
 @media(max-width: 767px) {
     h1, .h1 {
-        font-size: 3.5rem;
+        font-size: 3.3rem;
     }
 
     h2, .h2 {
