@@ -190,7 +190,7 @@ h4, .h4 {
     position: relative;
     z-index: 10;
     display: inline-block;
-    transform: translateX(7px);
+    margin-left: 6px;
     &:before {
         content: '';
         display: block;
@@ -245,6 +245,10 @@ h4, .h4 {
     .row>* {
         padding-right: calc(var(--bs-gutter-x) * .9);
         padding-left: calc(var(--bs-gutter-x) * .9);
+    }
+
+    section {
+        overflow: hidden;
     }
 }
 

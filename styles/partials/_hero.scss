@@ -24,6 +24,9 @@
         object-position: center;
         object-fit: cover;
     }
+    img.object-cover {
+        object-position: 37% top;
+    }
 }
 
 .hero-content {
@@ -40,13 +43,17 @@
 
 @media(max-width:767px) {
     .hero {
-        padding-top: 150px
+        padding-top: 130px;
+        .container {
+            padding-right: calc(var(--bs-gutter-x) * 0.9);
+            padding-left: calc(var(--bs-gutter-x) * 0.9);
+        }
     }
 
 
     .hero-subhead {
         font-size: 23px;
         line-height: 25px;
-        margin-bottom: 40px;
+        margin-bottom: 60px;
     }
 }

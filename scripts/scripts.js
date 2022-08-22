@@ -5,26 +5,32 @@ jQuery(document).ready(function($) {
         centerOnScroll: true,
     });
 
-    $.fn.isInViewport = function() {
-        var elementTop = $(this).offset().top;
-        var elementBottom = elementTop + $(this).outerHeight();
-    
-        var viewportTop = $(window).scrollTop();
-        var viewportBottom = viewportTop + $(window).height();
-    
-        return elementBottom > viewportTop && elementTop < viewportBottom;
-    };
-    
-
-    $(window).on('resize scroll', function() {
-        if ($('.animate').isInViewport()) {
-            // do something
-            $(this).addClass('animated');
-
-        } else {
-            // do something else
-        }
+    // smooth scroll
+    $('a[href*="#"]').on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top
+        }, 400, 'swing');
     });
+    
+
+    // animations
+    $(window).on('resize scroll', function() {
+        $.each($('.animate'), function() {
+            var elementTop = $(this).offset().top;
+            var elementBottom = elementTop + $(this).outerHeight();
+            var viewportTop = $(window).scrollTop();
+            var viewportBottom = viewportTop + $(window).height();
+
+            if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                $(this).addClass('animated');
+            }
+
+        })
+    });
+
+
+    $(window).trigger( 'scroll' );
 
     // view drone video
     $('.drone-button').on('click', function(e) {
@@ -44,6 +50,7 @@ jQuery(document).ready(function($) {
         }, 500)
         setTimeout(() => {
             $(drone).css('transform', 'translateY(0)')
+            $(window).trigger( 'scroll' );
         }, 510)
 
         $(this).addClass('active-button');
@@ -69,6 +76,7 @@ jQuery(document).ready(function($) {
         }, 500)
         setTimeout(() => {
             $(film).css('transform', 'translateY(0)')
+            $(window).trigger( 'scroll' );
         }, 510)
 
         $(this).addClass('active-button');
@@ -94,6 +102,7 @@ jQuery(document).ready(function($) {
         }, 500)
         setTimeout(() => {
             $(web).css('transform', 'translateY(0)')
+            $(window).trigger( 'scroll' );
         }, 510)
 
         $(this).addClass('active-button');
@@ -119,6 +128,7 @@ jQuery(document).ready(function($) {
         }, 500)
         setTimeout(() => {
             $(film).css('transform', 'translateY(0)')
+            $(window).trigger( 'scroll' );
         }, 510)
 
         $(this).addClass('active-button');
@@ -145,6 +155,7 @@ jQuery(document).ready(function($) {
         }, 500)
         setTimeout(() => {
             $(web).css('transform', 'translateY(0)')
+            $(window).trigger( 'scroll' );
         }, 510)
 
         $(this).addClass('active-button');
@@ -171,6 +182,7 @@ jQuery(document).ready(function($) {
         }, 500)
         setTimeout(() => {
             $(video).css('transform', 'translateY(0)')
+            $(window).trigger( 'scroll' );
         }, 510)
 
         $(this).addClass('active-button');
@@ -197,11 +209,12 @@ jQuery(document).ready(function($) {
         }, 500)
         setTimeout(() => {
             $(web).css('transform', 'translateY(0)')
+            $(window).trigger( 'scroll' );
         }, 510)
+
 
         $(this).addClass('active-button');
         $('.film-work-button').removeClass('active-button')
-
     })
 
     // view film works
@@ -223,6 +236,7 @@ jQuery(document).ready(function($) {
         }, 500)
         setTimeout(() => {
             $(film).css('transform', 'translateY(0)')
+            $(window).trigger( 'scroll' );
         }, 510)
 
         $(this).addClass('active-button');
@@ -236,19 +250,21 @@ jQuery(document).ready(function($) {
         $('.film-work-item').css('display', 'flex');
         setTimeout(() => {
             $('.film-work-item').css('opacity', 1);
+            $(window).trigger( 'scroll' );
         })
 
         $(this).css('display', 'none');
     })
 
-  // view more web
-  $('.view-more-web').on('click', function(e) {
-    e.preventDefault();
-    $('.web-work-item').css('display', 'flex');
-    setTimeout(() => {
-        $('.web-work-item').css('opacity', 1);
-    })
+    // view more web
+    $('.view-more-web').on('click', function(e) {
+        e.preventDefault();
+        $('.web-work-item').css('display', 'flex');
+        setTimeout(() => {
+            $('.web-work-item').css('opacity', 1);
+            $(window).trigger( 'scroll' );
+        })
 
-    $(this).css('display', 'none');
+        $(this).css('display', 'none');
     })
 });

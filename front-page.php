@@ -34,8 +34,8 @@ get_header();?>
                 <?php echo wp_get_attachment_image( get_field( 'white_logo' ), 'medium', false, array( 'class' => 'header-logo d-inline d-md-none', 'lazy' => false ) );?>
                 <h1 class="visually-hidden"><?php echo get_bloginfo( 'name' ); ?></h1>
                 <?php if ( get_field( 'hero_header' ) ): ?><p class="animate fadeup-header h1 hero-header text-uppercase white-text"><?php echo esc_html( get_field( 'hero_header' ) ); ?></p><?php endif; ?>
-                <?php if ( get_field( 'hero_subheader' ) ): ?><p class="hero-subhead white-text"><?php echo esc_html( get_field( 'hero_subheader' ) ); ?></p><?php endif; ?>
-                <?php if ( get_field( 'hero_link' ) ): ?><a href="/<?php echo esc_html( get_field( 'hero_link' )['url'] ); ?>" class="button white-text text-uppercase bold"><?php echo esc_html( get_field( 'hero_link' )['text'] ); ?></a><?php endif; ?>
+                <?php if ( get_field( 'hero_subheader' ) ): ?><p class="animate fadein hero-subhead white-text"><?php echo esc_html( get_field( 'hero_subheader' ) ); ?></p><?php endif; ?>
+                <?php if ( get_field( 'hero_link' ) ): ?><a href="<?php echo esc_attr( get_field( 'hero_link' )['url'] ); ?>" class="animate faderight button white-text text-uppercase bold"><?php echo esc_html( get_field( 'hero_link' )['text'] ); ?></a><?php endif; ?>
             </div>
         </div><!-- hero-content -->
     </section>
@@ -53,15 +53,15 @@ get_header();?>
                     }
                     ?>
                     <?php if ( $reel_header ) : ?>
-                    <h2 class="secondary-text mb-3"><?php echo do_shortcode( $new_reel_header ); ?></h2>
+                    <h2 class="secondary-text mb-3 animate fadeup-header"><?php echo do_shortcode( $new_reel_header ); ?></h2>
                     <?php endif; ?>
                     <?php if ( get_field( 'feature_copy' ) ) :?>
-                    <div class="dark-grey-text"><?php echo do_shortcode( get_field( 'feature_copy' ) );?></div>
+                    <div class="dark-grey-text fadein animate"><?php echo do_shortcode( get_field( 'feature_copy' ) );?></div>
                     <?php endif; ?>
-                    <a href="" class="button dark-grey-text film-button me-5 active-button">Feature Reel</a>
-                    <a href="" class="button dark-grey-text drone-button ">Drone Reel</a>
+                    <a href="" class="button dark-grey-text animate fadedown film-button me-5 active-button">Feature Reel</a>
+                    <a href="" class="button dark-grey-text animate fadedown drone-button delay">Drone Reel</a>
                 </div>
-                <div class="col-lg-6 reel-videos">
+                <div class="col-lg-6 reel-videos animate fadeleft">
                     <?php
                     foreach( get_field( 'feature_reels' ) as $item ) : 
                     $reel_url   = $item['url'];
@@ -90,13 +90,13 @@ get_header();?>
                     }
                     ?>
                     <?php if ( $team_title ) : ?>
-                    <h2 class="mb-3"><?php echo do_shortcode( $new_team_title ); ?></h2>
+                    <h2 class="mb-3 animate fadeup-header"><?php echo do_shortcode( $new_team_title ); ?></h2>
                     <?php endif; ?>
                     <?php if ( $team_copy ) : ?>
-                    <div><?php echo do_shortcode( $team_copy ); ?></div>
+                    <div class="animate fadein"><?php echo do_shortcode( $team_copy ); ?></div>
                     <?php endif; ?>
-                    <a href="" class="white-text button view-film-team active-button me-5">Videography Team</a>
-                    <a href="" class="white-text button  view-web-team  ">Web Design Team</a>
+                    <a href="" class="white-text button animate faderight view-film-team active-button me-5">Videography Team</a>
+                    <a href="" class="white-text button animate faderight delay view-web-team  ">Web Design Team</a>
                 </div>
             </div>
             <div class="film-team">
@@ -114,7 +114,7 @@ get_header();?>
                     $align = '';
                 }
                 ?>
-                <div class="row team-content align-items-center">
+                <div class="row team-content align-items-center animate fadeup">
                     <div class="col-xl-9 col-lg-8 team-bio <?php echo esc_attr( $align ); ?>">
                         <p class="head-font mb-0 h4"><span class="h3"><?php echo esc_html( $name ); ?></span><span class="primary-text bio-detail"> <?php echo esc_html( $position ); ?></span></p>
                         <p class="head-font bio-hobby"><?php echo esc_html( $subhead ); ?></p>
@@ -144,7 +144,7 @@ get_header();?>
                     $align = '';
                 }
                 ?>
-                <div class="row team-content align-items-center ">
+                <div class="row team-content align-items-center animate fadeup">
                     <div class="col-xl-8 col-lg-7 team-bio <?php echo esc_attr( $align ); ?>">
                         <p class="head-font mb-0 h4"><span class="h3"><?php echo esc_html( $name ); ?></span><span class="primary-text bio-detail"> <?php echo esc_html( $position ); ?></span></p>
                         <p class="head-font bio-hobby"><?php echo esc_html( $subhead ); ?></p>
@@ -174,29 +174,29 @@ get_header();?>
                     $web_service = get_field( 'web_design' );
                     ?>
                     <?php if ( $services_header ) : ?>
-                    <h2 class="secondary-text mb-3"><?php echo esc_html(  $services_header ); ?></h2>
+                    <h2 class="secondary-text mb-3 animate fadeup-header"><?php echo esc_html(  $services_header ); ?></h2>
                     <?php endif; ?>
                     <?php if ( get_field( 'services_copy' ) ) :?>
-                    <div class="dark-grey-text"><?php echo do_shortcode( get_field( 'services_copy' ) );?></div>
+                    <div class="dark-grey-text animate fadein"><?php echo do_shortcode( get_field( 'services_copy' ) );?></div>
                     <?php endif; ?>
-                    <a href="" class="button dark-grey-text video-button me-4 active-button">Videography</a>
-                    <a href="" class="button dark-grey-text web-button ">Web Design</a>
+                    <a href="" class="button animate faderight dark-grey-text video-button me-4 active-button">Videography</a>
+                    <a href="" class="button animate faderight dark-grey-text web-button delay">Web Design</a>
                 </div>
             </div>
         </div>
         <!-- VIDEO SERVICES -->
         <div class="video-service container">
             <?php foreach( $video_service as $item ) : ?>
-            <div class="row align-items-center">
+            <div class="row align-items-center anim">
                 <!-- image -->
                <div class="service-image-wrap col-lg-6 animate">
                     <div class="service-image">
-                        <?php echo wp_get_attachment_image($item['image'], 'large', false, array( 'class' => 'object-cover' )) ; ?>
-                        <div class="service-title"><p class="primary-text head-font"><?php echo esc_html( $item['header']) ; ?></p></div>
+                        <?php echo wp_get_attachment_image($item['image'], 'large', false, array( 'class' => 'object-cover animate fadedown' )) ; ?>
+                        <div class="service-title"><p class="animate faderight primary-text head-font"><?php echo esc_html( $item['header']) ; ?></p></div>
                     </div>
                </div>
                <!-- copy -->
-               <div class="col-lg-6">
+               <div class="col-lg-6 animate fadein">
                     <div class="service-content">
                     <?php echo do_shortcode( $item['copy'] );?>
                     </div>
@@ -211,13 +211,13 @@ get_header();?>
                 <!-- image -->
                <div class="service-image-wrap col-lg-6">
                     <div class="service-image">
-                        <?php echo wp_get_attachment_image($item['image'], 'large', false, array( 'class' => 'object-cover')) ; ?>
-                        <div class="service-title"><p class="primary-text head-font"><?php echo esc_html( $item['header']) ; ?></p></div>
+                        <?php echo wp_get_attachment_image($item['image'], 'large', false, array( 'class' => 'object-cover animate fadedown')) ; ?>
+                        <div class="service-title"><p class="animate faderight primary-text head-font"><?php echo esc_html( $item['header']) ; ?></p></div>
                     </div>
                </div>
                <!-- copy -->
                <div class="col-lg-6">
-                    <div class="service-content">
+                    <div class="service-content animate fadein">
                     <?php echo do_shortcode( $item['copy'] );?>
                     </div>
                </div>
@@ -225,12 +225,12 @@ get_header();?>
             <?php endforeach; ?>
         </div>
         <div class="container">
-        <a href="#contact" class="dark-grey-text button">Let's Connect</a>
+        <a href="#contact" class="dark-grey-text button animate fadedown">Let's Connect</a>
         </div>
     </section>
 
     <!-- RENTAL -->
-    <div class="ratio ratio-1x1 d-sm-none"><?php echo wp_get_attachment_image( get_field( 'rental_image' ), 'large', false, array( 'class' => 'object-cover' ) );?></div>
+    <div class="ratio ratio-1x1 d-sm-none"><?php echo wp_get_attachment_image( get_field( 'rental_image' ), 'large', false, array( 'class' => 'object-cover animate fadedown' ) );?></div>
     <section class="black-bg white-text rental">
         <div class="container">
             <div class="row align-items-end justify-space-between mb-5">
@@ -241,16 +241,16 @@ get_header();?>
                     $r_sub_head = get_field( 'rental_sub_head' );
                     $r_sub_copy = get_field( 'rental_sub_copy' );
                     ?>
-                    <h2 class="mb-3"><?php echo esc_html( $r_header ); ?></h2>
-                    <div class="rental-copy"><?php echo do_shortcode( $r_copy  ); ?></div>
-                    <p class="h4 primary-text head-font"><?php echo esc_html( $r_sub_head ); ?></p>
-                    <div class="rental-sub-copy"><?php echo do_shortcode( $r_sub_copy ); ?></div>
+                    <h2 class="mb-3 animate fadeup-header"><?php echo esc_html( $r_header ); ?></h2>
+                    <div class="rental-copy animate fadein"><?php echo do_shortcode( $r_copy  ); ?></div>
+                    <p class="h4 primary-text head-font animate fadein"><?php echo esc_html( $r_sub_head ); ?></p>
+                    <div class="rental-sub-copy animate fadein"><?php echo do_shortcode( $r_sub_copy ); ?></div>
                 </div>
-                <div class="col-lg-6 d-none d-sm-block rental-image-wrap">
+                <div class="col-lg-6 d-none d-sm-block rental-image-wrap animate fadeleft">
                     <div class="rental-image"><?php echo wp_get_attachment_image( get_field( 'rental_image' ), 'large', false, array( 'class' => 'object-cover' ) );?></div>
                 </div>
             </div>
-            <a href="#contact" class="white-text button">Studio Booking</a>
+            <a href="#contact" class="white-text button animate fadedown">Studio Booking</a>
         </div>
     </section>
 
@@ -264,13 +264,13 @@ get_header();?>
                 $web_works = get_field( 'website' );
                 ?>
                 <?php if ( $works_header ) : ?>
-                <h2 class="secondary-text mb-3"><?php echo esc_html(  $works_header ); ?></h2>
+                <h2 class="secondary-text mb-3 animate fadeup-header"><?php echo esc_html(  $works_header ); ?></h2>
                 <?php endif; ?>
                 <?php if ( get_field( 'works_copy' ) ) :?>
-                <div class="dark-grey-text"><?php echo do_shortcode( get_field( 'works_copy' ) );?></div>
+                <div class="dark-grey-text animate fadein"><?php echo do_shortcode( get_field( 'works_copy' ) );?></div>
                 <?php endif; ?>
-                <a href="" class="button dark-grey-text film-work-button me-4 active-button">Film & Video</a>
-                <a href="" class="button dark-grey-text web-work-button ">Web Design</a>
+                <a href="" class="button dark-grey-text animate faderight film-work-button me-4 active-button">Film & Video</a>
+                <a href="" class="button dark-grey-text animate faderight web-work-button delay">Web Design</a>
             </div>
         </div>
         <!-- LIST OF FILMSS -->
@@ -281,23 +281,23 @@ get_header();?>
             ?>
             <div class="row align-items-center film-work-item <?php echo esc_attr( 'film-' . $i ); ?>">
                 <!-- image -->
-                <div class="works-media-wrap col-lg-6">
+                <div class="works-media-wrap col-lg-6 animate faderight">
                     <div class="works-media">
                     <?php embed_video($item['url'], $item['cover_photo'], null); ?>
                     </div>  
                 </div>
                 <!-- copy -->
                 <div class="col-lg-6 works-content">
-                    <p class="h4 mb-0 primary-text head-font"><?php echo esc_html( $item['subhead']); ?></p>
-                    <p class="head-font h3 dark-grey-tex"><?php echo do_shortcode( $item['title'] ); ?></p>
-                    <p class="dark-grey-tex"><?php echo do_shortcode( $item['content'] ); ?></p>
+                    <p class="h4 mb-0 primary-text head-font animate fadein"><?php echo esc_html( $item['subhead']); ?></p>
+                    <p class="head-font h3 dark-grey-tex animate fadein"><?php echo do_shortcode( $item['title'] ); ?></p>
+                    <div class="dark-grey-tex animate fadein"><?php echo do_shortcode( $item['content'] ); ?></div>
                </div>
             </div><!-- end of row -->
             <?php 
             $i++;
             endforeach;
             ?>
-            <a href="" class="mt-5 view-more-film button dark-grey-text">View All Videos</a>
+            <a href="" class="mt-5 view-more-film button dark-grey-text animate faderight">View All Videos</a>
         </div>
         <!-- LIST OF SITES -->
         <div class="web-works">
@@ -307,16 +307,16 @@ get_header();?>
             ?>
             <div class="row align-items-center web-work-item <?php echo esc_attr( 'web-' . $i ); ?>">
                 <!-- image -->
-                <div class="works-media-wrap col-lg-6">
+                <div class="works-media-wrap col-lg-6 animate faderight">
                     <div class="works-media">
                     <?php echo wp_get_attachment_image($item['cover_photo'], 'large', false, array( 'class' => 'object-cover', 'loading' => false, ) );  ?>
                     </div>
                 </div>
                 <!-- copy -->
                 <div class="col-lg-6  works-content">
-                    <p class="h4 mb-0 primary-text head-font"><?php echo esc_html( $item['subhead']); ?></p>
-                    <p class="head-font h3 dark-grey-tex"><?php echo do_shortcode( $item['title'] ); ?></p>
-                    <p class="dark-grey-tex"><?php echo do_shortcode( $item['content'] ); ?></p>
+                    <p class="h4 mb-0 primary-text head-font animate fadein"><?php echo esc_html( $item['subhead']); ?></p>
+                    <p class="head-font h3 dark-grey-tex animate fadein"><?php echo do_shortcode( $item['title'] ); ?></p>
+                    <div class="dark-grey-tex"><?php echo do_shortcode( $item['content'] ); ?></div>
                     <?php
                     $web_url = str_replace('https://', '', $item['url'] );
                     $web_url = str_replace('http://', '', $web_url );
@@ -330,7 +330,7 @@ get_header();?>
             $i++;
             endforeach;
             ?>
-            <a href="" class="mt-5 view-more-web button dark-grey-text">View More</a>
+            <a href="" class="mt-5 view-more-web button dark-grey-text animate faderight">View More</a>
         </div>
     </section>
     
@@ -341,8 +341,8 @@ get_header();?>
     <?php if ( $quote['content'] || $quote['author'] ) : ?>
 	<section class="quote primary-bg text-center">
 		<div class="container">
-			<p class=" dark-grey-text large text-uppercase head-font"><?php echo esc_html( $quote['content']); ?></p>
-			<p class="text-shadow white-text bold small"><?php echo esc_html( $quote['author'] ); ?></p>
+			<p class=" dark-grey-text large text-uppercase head-font fadedown animate"><?php echo esc_html( $quote['content']); ?></p>
+			<p class="text-shadow white-text bold small fadedown animate delay"><?php echo esc_html( $quote['author'] ); ?></p>
 		</div>
     </section>
 	<?php endif;?>
