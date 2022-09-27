@@ -79,7 +79,10 @@ a {
     }
 }
 
-
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+}
 
 
 // MEDIA
@@ -151,6 +154,10 @@ img[src=""]{
 
 .secondary-bg {
     background-color: #595959;
+}
+
+.light-alt-bg {
+    background-color: $light-alt;
 }
 
 //Headers

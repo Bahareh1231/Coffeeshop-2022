@@ -17,6 +17,9 @@ function coffee_scripts() {
 
     wp_enqueue_style('fancyboxcss', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css', '1.3.4', null);
 
+    // slick slider
+    wp_enqueue_style('slickcss', get_template_directory_uri() . '/styles/slick.css', array(), null);
+
     
     // SCRIPTS
     
@@ -34,7 +37,8 @@ function coffee_scripts() {
 
     wp_enqueue_script('fancyboxjs', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery'), '1.3.4', false);
 
-    // wp_enqueue_script('fancyboxtransitions', '/fancybox/jquery.easing-1.4.pack.js', array('jquery'), '1.4', false);
+     //slick slider
+     wp_enqueue_script('slickjs', get_template_directory_uri() . '/scripts/slick.min.js', array('jquery'), '1.2.0', true );
 
 }
 add_action('wp_enqueue_scripts', 'coffee_scripts');

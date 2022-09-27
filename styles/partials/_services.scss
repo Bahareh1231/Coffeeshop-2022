@@ -11,7 +11,7 @@
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    border-radius: 36px 36px 36px 0;
+    border-radius: 36px;
     img {
         position: relative;
         z-index: 1;
@@ -23,18 +23,10 @@
 }
 
 .service-title {
-    position: absolute;
-    z-index: 2;
-    bottom: -4px;
-    background: white;
-    padding: 20px 35px 0 0;
-    border-radius: 0 45px 0px 0;
-    p {
         margin: 0;
         font-size: 1.9rem;
         font-size: 1.9rem;
         line-height: normal;
-    }
 }
 
 .web-service {

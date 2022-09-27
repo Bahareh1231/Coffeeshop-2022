@@ -32,6 +32,14 @@ jQuery(document).ready(function($) {
 
     $(window).trigger( 'scroll' );
 
+    // rental slider
+    $('.rental-slider').slick({
+        fade: true,
+        arrows: false,
+        dots: false,
+        autoplay: true,
+    })
+
     // view drone video
     $('.drone-button').on('click', function(e) {
         e.preventDefault();

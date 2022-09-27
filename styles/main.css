@@ -60,6 +60,11 @@ a:focus {
   outline: none;
 }
 
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -125,6 +130,10 @@ img[src=""] {
 
 .secondary-bg {
   background-color: #595959;
+}
+
+.light-alt-bg {
+  background-color: #FDFBF5;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -277,47 +286,6 @@ header {
 header li {
   margin-right: 30px;
 }
-.header-logo {
-  max-width: 162px;
-  position: absolute;
-  z-index: 10;
-  opacity: 0;
-  -webkit-animation: fadein 1.5s linear forwards;
-          animation: fadein 1.5s linear forwards;
-  z-index: -1;
-}
-
-@-webkit-keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  75% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    z-index: 20;
-  }
-}
-
-@keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  75% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    z-index: 20;
-  }
-}
 @media (max-width: 991px) {
   .menu-item {
     display: none;
@@ -326,17 +294,10 @@ header li {
     display: block;
   }
 }
-@media (max-width: 767px) {
-  .header-logo {
-    position: static;
-    margin-bottom: 11px;
-    max-width: 152px;
-  }
-}
 .hero {
   height: 100vh;
   position: relative;
-  padding-top: 260px;
+  padding-top: 180px;
 }
 
 .hero-media {
@@ -381,6 +342,48 @@ header li {
   z-index: 10;
 }
 
+.header-logo {
+  max-width: 220px;
+  margin-bottom: 11px;
+  position: static;
+  z-index: 10;
+  opacity: 0;
+  -webkit-animation: fadein 1.5s linear forwards;
+          animation: fadein 1.5s linear forwards;
+  z-index: -1;
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    z-index: 20;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    z-index: 20;
+  }
+}
 .hero-subhead {
   font-size: 25px;
   line-height: 28px;
@@ -399,6 +402,9 @@ header li {
     font-size: 23px;
     line-height: 25px;
     margin-bottom: 60px;
+  }
+  .header-logo {
+    max-width: 160px;
   }
 }
 .quote {
@@ -599,6 +605,15 @@ header li {
   margin-top: 9px;
 }
 
+.desktop-rental-slider {
+  aspect-ratio: 1/1;
+}
+
+.slick-track,
+.slick-list {
+  height: 100%;
+}
+
 @media (max-width: 991px) {
   .rental-sub-copy {
     margin-bottom: 30px;
@@ -620,7 +635,7 @@ header li {
   width: 100%;
   aspect-ratio: 16/9;
   overflow: hidden;
-  border-radius: 36px 36px 36px 0;
+  border-radius: 36px;
 }
 .service-image img {
   position: relative;
@@ -632,14 +647,6 @@ header li {
 }
 
 .service-title {
-  position: absolute;
-  z-index: 2;
-  bottom: -4px;
-  background: white;
-  padding: 20px 35px 0 0;
-  border-radius: 0 45px 0px 0;
-}
-.service-title p {
   margin: 0;
   font-size: 1.9rem;
   font-size: 1.9rem;

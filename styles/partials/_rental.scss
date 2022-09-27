@@ -39,6 +39,14 @@
     }
 }
 
+.desktop-rental-slider {
+    aspect-ratio: 1/1;
+}
+
+.slick-track,
+.slick-list {
+    height: 100%;
+}
 
 @media(max-width: 991px) {
     .rental-sub-copy {
