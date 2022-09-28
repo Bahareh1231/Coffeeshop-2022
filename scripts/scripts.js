@@ -171,6 +171,55 @@ jQuery(document).ready(function($) {
 
     })
 
+    $('#menu-item-187').on('click', function(e) {
+        let video = $('.video-service');
+        let web = $('.web-service');
+
+        $(video).css('transform', 'translateY(50px)')
+        setTimeout(() => {
+            $(video).css('opacity', 0 )
+        }, 100)
+        setTimeout(() => {
+            $(video).css('display', 'none');
+            $(web).css({
+                'display': 'block',
+                'opacity': 1
+            })
+        }, 500)
+        setTimeout(() => {
+            $(web).css('transform', 'translateY(0)')
+            $(window).trigger( 'scroll' );
+        }, 510)
+
+        $('.web-button').addClass('active-button');
+        $('.video-button').removeClass('active-button')
+    })
+
+    // videography on menu
+    $('#menu-item-186').on('click', function(e) {
+        let video = $('.video-service');
+        let web = $('.web-service');
+
+        $(web).css('transform', 'translateY(50px)')
+        setTimeout(() => {
+            $(web).css('opacity', 0 )
+        }, 100)
+        setTimeout(() => {
+            $(web).css('display', 'none');
+            $(video).css({
+                'display': 'block',
+                'opacity': 1
+            })
+        }, 500)
+        setTimeout(() => {
+            $(video).css('transform', 'translateY(0)')
+            $(window).trigger( 'scroll' );
+        }, 510)
+
+        $('.video-button').addClass('active-button');
+        $('.web-button').removeClass('active-button')
+    })
+
     // view video services
     $('.video-button').on('click', function(e) {
         e.preventDefault();

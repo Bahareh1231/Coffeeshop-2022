@@ -115,13 +115,13 @@ get_header();?>
                 }
                 ?>
                 <div class="row team-content align-items-center animate fadeup">
-                    <div class="col-xl-9 col-lg-8 team-bio <?php echo esc_attr( $align ); ?>">
+                    <div class="col-xl-7 col-lg-8 team-bio <?php echo esc_attr( $align ); ?>">
                         <p class="head-font mb-0 h3"><?php echo esc_html( $name ); ?></p>
                         <p class="head-font mb-0 h4 primary-text bio-detail"><?php echo esc_html( $position ); ?></p>
                         <p class="head-font bio-hobby"><?php echo esc_html( $subhead ); ?></p>
                         <?php echo do_shortcode( $bio ); ?>
                     </div>
-                    <div class="col-xl-3 col-lg-4 team-image">
+                    <div class="col-xl-5 col-lg-4 team-image">
                         <div class="team-wrap">
                             <?php echo wp_get_attachment_image( $image, 'medium', false, array( 'class' => 'object-cover' ) ); ?>
                         </div>
@@ -146,13 +146,13 @@ get_header();?>
                 }
                 ?>
                 <div class="row team-content align-items-center animate fadeup">
-                    <div class="col-xl-8 col-lg-7 team-bio <?php echo esc_attr( $align ); ?>">
+                    <div class="col-xl-7 col-lg-7 team-bio <?php echo esc_attr( $align ); ?>">
                     <p class="head-font mb-0 h3"><?php echo esc_html( $name ); ?></p>
                         <p class="head-font mb-0 h4 primary-text bio-detail"><?php echo esc_html( $position ); ?></p>
                         <p class="head-font bio-hobby"><?php echo esc_html( $subhead ); ?></p>
                         <?php echo do_shortcode( $bio ); ?>
                     </div>
-                    <div class="col-xl-3 col-lg-4 team-image">
+                    <div class="col-xl-5 col-lg-4 team-image">
                         <div class="team-wrap">
                             <?php echo wp_get_attachment_image( $image, 'medium', false, array( 'class' => 'object-cover' ) ); ?>
                         </div>
@@ -172,7 +172,9 @@ get_header();?>
                 <?php
                 $works_header = get_field( 'works_heading' );
                 $film_works = get_field( 'video' );
+                $film_works = array_reverse( $film_works );
                 $web_works = get_field( 'website' );
+                $web_works = array_reverse( $web_works );
                 ?>
                 <?php if ( $works_header ) : ?>
                 <h2 class="secondary-text mb-3 animate fadeup-header"><?php echo esc_html(  $works_header ); ?></h2>
@@ -226,7 +228,7 @@ get_header();?>
                 <!-- copy -->
                 <div class="col-lg-6  works-content">
                     <p class="h4 mb-0 primary-text head-font animate fadein"><?php echo esc_html( $item['subhead']); ?></p>
-                    <p class="head-font h3 dark-grey-tex animate fadein"><?php echo do_shortcode( $item['title'] ); ?></p>
+                    <p class="head-font h3 animate fadein"><?php echo do_shortcode( $item['title'] ); ?></p>
                     <div class="dark-grey-tex"><?php echo do_shortcode( $item['content'] ); ?></div>
                     <?php
                     $web_url = str_replace('https://', '', $item['url'] );
@@ -234,7 +236,7 @@ get_header();?>
                     $web_url = str_replace('www.', '', $web_url );
                     $web_url = str_replace('/', '', $web_url );
                     ?>
-                    <a target="_blank" href="<?php echo esc_attr( $item['url'] );?>" class="button secondary-text site-url"><?php echo esc_html( $web_url ); ?></a>
+                    <a target="_blank" href="<?php echo esc_attr( $item['url'] );?>" class="button black-text site-url"><?php echo esc_html( $web_url ); ?></a>
                </div>
             </div><!-- end of row -->
             <?php 
@@ -246,7 +248,7 @@ get_header();?>
     </section>
 
     <!-- SERVICES -->
-    <section class="services light-alt-bg">
+    <section class="services light-alt-bg" id="services">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-6 services-text">

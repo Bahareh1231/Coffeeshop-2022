@@ -522,7 +522,7 @@ header li {
 .team-wrap {
   border-radius: 50%;
   overflow: hidden;
-  height: 188px;
+  aspect-ratio: 1/1;
 }
 
 .web-team {
@@ -531,19 +531,18 @@ header li {
   transform: translateY(50px);
 }
 
-@media (max-width: 1199px) {
-  .team-wrap {
-    height: 227.99px;
-  }
-}
 @media (max-width: 991px) {
+  .team-content .order-lg-2 + .team-image {
+    padding-right: 21.6px;
+    padding-left: 21.6px;
+  }
   .team-wrap {
     height: 227.98px;
     width: 227.98px;
     margin: 0 auto;
   }
   .team-image {
-    padding-left: 21.6px;
+    padding-right: 21.6px;
     padding-left: 21.6px;
     order: 1;
   }
