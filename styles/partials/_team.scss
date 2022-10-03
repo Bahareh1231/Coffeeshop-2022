@@ -4,11 +4,11 @@
 }
 
 .team-header {
-    padding-bottom: 45px;
+    padding-bottom: 35px;
 }
 
 .team-content {
-    padding-top: 45px;
+    padding-top: 55px;
     .order-lg-2 {
         & + .team-image {
             padding-right: 80px;
@@ -22,8 +22,6 @@
 }
 
 .team-wrap {
-    
-    border-radius: 50%;
     overflow: hidden;
     aspect-ratio: 1/1;
 }

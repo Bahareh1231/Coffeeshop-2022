@@ -195,6 +195,14 @@ h4, .h4 {
   color: #fff;
 }
 
+.indent-button {
+  margin-left: 15.6px;
+}
+
+.indent-button-row {
+  margin-left: 15px;
+}
+
 .text-shadow {
   text-shadow: 0px 0.5px 3px rgb(156, 154, 154);
 }
@@ -504,11 +512,11 @@ header li {
 }
 
 .team-header {
-  padding-bottom: 45px;
+  padding-bottom: 35px;
 }
 
 .team-content {
-  padding-top: 45px;
+  padding-top: 55px;
 }
 .team-content .order-lg-2 + .team-image {
   padding-right: 80px;
@@ -520,7 +528,6 @@ header li {
 }
 
 .team-wrap {
-  border-radius: 50%;
   overflow: hidden;
   aspect-ratio: 1/1;
 }
@@ -620,6 +627,9 @@ header li {
   .rental-image {
     padding-left: 0px;
   }
+  .rental-image-wrap {
+    padding-left: 21.6px;
+  }
 }
 .services {
   padding-top: 90px;
@@ -711,7 +721,7 @@ header li {
     aspect-ratio: 1/1;
   }
   .service-title {
-    padding: 20px 35px 0 24px;
+    padding-bottom: 5px;
   }
   .service-content li {
     margin-top: 29px;
@@ -768,6 +778,12 @@ header li {
   }
   .works-media-wrap {
     padding-right: 21.6px;
+  }
+}
+@media (max-width: 767px) {
+  .film-works .row,
+.web-works .row {
+    margin-bottom: 70px;
   }
 }
 .contact {
@@ -908,5 +924,11 @@ footer img {
   }
   footer {
     padding-bottom: 33px;
+  }
+  .footer-logo,
+.footer-icons,
+.credits {
+    padding-left: 9.6px;
+    padding-right: 9.6px;
   }
 }/*# sourceMappingURL=main.css.map */

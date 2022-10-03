@@ -123,7 +123,7 @@ get_header();?>
                     </div>
                     <div class="col-xl-5 col-lg-4 team-image">
                         <div class="team-wrap">
-                            <?php echo wp_get_attachment_image( $image, 'medium', false, array( 'class' => 'object-cover' ) ); ?>
+                            <?php echo wp_get_attachment_image( $image, 'large', false, array( 'class' => 'object-cover' ) ); ?>
                         </div>
                     </div>
                 </div>
@@ -154,7 +154,7 @@ get_header();?>
                     </div>
                     <div class="col-xl-5 col-lg-4 team-image">
                         <div class="team-wrap">
-                            <?php echo wp_get_attachment_image( $image, 'medium', false, array( 'class' => 'object-cover' ) ); ?>
+                            <?php echo wp_get_attachment_image( $image, 'large', false, array( 'class' => 'object-cover' ) ); ?>
                         </div>
                     </div>
                 </div>
@@ -210,7 +210,7 @@ get_header();?>
             $i++;
             endforeach;
             ?>
-            <a href="" class="mt-5 view-more-film button dark-grey-text animate faderight">View All Videos</a>
+            <a href="" class="indent-button-row mt-5 view-more-film button dark-grey-text animate faderight">View All Videos</a>
         </div>
         <!-- LIST OF SITES -->
         <div class="web-works">
@@ -243,7 +243,7 @@ get_header();?>
             $i++;
             endforeach;
             ?>
-            <a href="" class="mt-5 view-more-web button dark-grey-text animate faderight">View More</a>
+            <a href="" class="indent-button-row mt-5 view-more-web button dark-grey-text animate faderight">View More</a>
         </div>
     </section>
 
@@ -310,7 +310,7 @@ get_header();?>
             <?php endforeach; ?>
         </div>
         <div class="container">
-        <a href="#contact" class="dark-grey-text button animate fadedown">Let's Connect</a>
+            <a href="#contact" class="indent-button dark-grey-text button animate fadedown">Let's Connect</a>
         </div>
     </section>
 
@@ -346,7 +346,9 @@ get_header();?>
                     </div>
                 </div>
             </div>
-            <a href="#contact" class="white-text button animate fadedown">Studio Booking</a>
+        </div>
+        <div class="container">
+            <a href="#contact" class="white-text button animate fadedown indent-button">Studio Booking</a>
         </div>
     </section>
     
@@ -355,7 +357,7 @@ get_header();?>
     $quote = get_field( 'quote' )
     ?>
     <?php if ( $quote['content'] || $quote['author'] ) : ?>
-	<section class="quote primary-bg text-center">
+	<section class="quote primary-bg text-center d-none d-sm-block">
 		<div class="container">
 			<p class=" dark-grey-text large text-uppercase head-font fadedown animate"><?php echo esc_html( $quote['content']); ?></p>
 			<p class="text-shadow white-text bold small fadedown animate delay"><?php echo esc_html( $quote['author'] ); ?></p>

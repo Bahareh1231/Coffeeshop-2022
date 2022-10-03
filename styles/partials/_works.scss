@@ -57,3 +57,10 @@
     }
 }
 
+@media(max-width: 767px) {
+    .film-works .row, 
+    .web-works .row {
+        margin-bottom: 70px;
+    }
+}
+
