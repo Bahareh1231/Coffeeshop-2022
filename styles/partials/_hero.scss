@@ -11,7 +11,7 @@
     &:before {
         @include position-absolute;
         z-index: 1;
-        background-color: rgba($black, 0.45);
+        background-color: rgba($black, 0.2);
         content: '';
         display: block;
     }
@@ -35,7 +35,7 @@
     z-index: 10;
 }
 
-.header-logo {
+img.header-logo.lazyload {
     max-width: 220px;
     margin-bottom: 11px;
     position: static;
@@ -43,6 +43,7 @@
     opacity: 0;
     animation: fadein 1.5s linear forwards;
     z-index: -1;
+    display: inline !important;
 }
 
 @keyframes fadein {

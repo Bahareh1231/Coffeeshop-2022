@@ -345,7 +345,7 @@ header li {
   bottom: 0;
   position: absolute;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0.2);
   content: "";
   display: block;
 }
@@ -371,7 +371,7 @@ header li {
   z-index: 10;
 }
 
-.header-logo {
+img.header-logo.lazyload {
   max-width: 220px;
   margin-bottom: 11px;
   position: static;
@@ -380,6 +380,7 @@ header li {
   -webkit-animation: fadein 1.5s linear forwards;
           animation: fadein 1.5s linear forwards;
   z-index: -1;
+  display: inline !important;
 }
 
 @-webkit-keyframes fadein {

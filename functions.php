@@ -106,3 +106,5 @@ function embed_video($url, $photo, $class) {
     }
     echo '</div>';
 }
+
+add_filter( 'wp_lazy_loading_enabled', '__return_false' );
