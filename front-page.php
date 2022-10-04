@@ -34,7 +34,7 @@ get_header();?>
                 <?php echo wp_get_attachment_image( get_field( 'white_logo' ), 'medium', false, array( 'class' => 'header-logo d-inline', 'lazy' => false ) );?>
                 <h1 class="visually-hidden"><?php echo get_bloginfo( 'name' ); ?></h1>
                 <?php if ( get_field( 'hero_header' ) ): ?><p class="animate fadeup-header h1 hero-header text-uppercase white-text"><?php echo esc_html( get_field( 'hero_header' ) ); ?></p><?php endif; ?>
-                <?php if ( get_field( 'hero_subheader' ) ): ?><p class="animate fadein hero-subhead white-text"><?php echo esc_html( get_field( 'hero_subheader' ) ); ?></p><?php endif; ?>
+                <?php if ( get_field( 'hero_subheader' ) ): ?><p class="animate fadeup delay hero-subhead white-text"><?php echo esc_html( get_field( 'hero_subheader' ) ); ?></p><?php endif; ?>
                 <?php if ( get_field( 'hero_link' ) ): ?><a href="<?php echo esc_attr( get_field( 'hero_link' )['url'] ); ?>" class="animate faderight button white-text text-uppercase bold"><?php echo esc_html( get_field( 'hero_link' )['text'] ); ?></a><?php endif; ?>
             </div>
         </div><!-- hero-content -->

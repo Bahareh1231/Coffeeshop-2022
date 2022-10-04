@@ -47,6 +47,22 @@ body {
   line-height: 23px;
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.wf-loading body {
+  visibility: hidden;
+}
+
 ul {
   padding: 0;
   list-style: none;
@@ -294,6 +310,11 @@ header {
 header li {
   margin-right: 30px;
 }
+.header-menu ul {
+  position: relative;
+  z-index: 1;
+}
+
 @media (max-width: 991px) {
   .menu-item {
     display: none;

@@ -12,7 +12,7 @@
                 <?php endif; ?>
             </div>
             <div class="col-lg-6 footer-form animate fadedown">
-				<?php echo do_shortcode( '[contact-form-7 id="280" title="Contact form 1"]' ); ?>
+				<?php echo do_shortcode( '[contact-form-7 id="382" title="Footer Form"]' ); ?>
 			</div>
         </div>
     </section>

@@ -64,6 +64,12 @@ body {
     line-height: 23px;
 }
 
+.grecaptcha-badge { visibility: hidden; } .grecaptcha-badge { visibility: hidden; } .grecaptcha-badge { visibility: hidden; }
+
+.wf-loading body {
+    visibility: hidden;
+    }
+
 
 ul {
     padding: 0;
