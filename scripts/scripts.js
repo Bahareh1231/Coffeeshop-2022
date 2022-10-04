@@ -40,6 +40,14 @@ jQuery(document).ready(function($) {
         autoplay: true,
     })
 
+    $('.rental-slider-2').slick({
+        fade: true,
+        arrows: false,
+        dots: false,
+        autoplay: true,
+    })
+
+
     // view drone video
     $('.drone-button').on('click', function(e) {
         e.preventDefault();

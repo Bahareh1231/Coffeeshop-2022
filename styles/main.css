@@ -371,7 +371,7 @@ header li {
   z-index: 10;
 }
 
-img.header-logo.lazyload {
+.header-logo {
   max-width: 220px;
   margin-bottom: 11px;
   position: static;

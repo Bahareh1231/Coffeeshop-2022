@@ -31,7 +31,7 @@ get_header();?>
         
         <div class="container">
             <div class="hero-content">
-                <?php echo wp_get_attachment_image( get_field( 'white_logo' ), 'medium', false, array( 'class' => 'header-logo d-inline', 'loading' => 'false' ) );?>
+                <?php echo wp_get_attachment_image( get_field( 'white_logo' ), 'medium', false, array( 'class' => 'header-logo d-inline', 'loading' => false, ) );?>
                 <h1 class="visually-hidden"><?php echo get_bloginfo( 'name' ); ?></h1>
                 <?php if ( get_field( 'hero_header' ) ): ?><p class="animate fadeup-header h1 hero-header text-uppercase white-text"><?php echo esc_html( get_field( 'hero_header' ) ); ?></p><?php endif; ?>
                 <?php if ( get_field( 'hero_subheader' ) ): ?><p class="animate fadeup delay hero-subhead white-text"><?php echo esc_html( get_field( 'hero_subheader' ) ); ?></p><?php endif; ?>
@@ -274,8 +274,8 @@ get_header();?>
             <div class="row align-items-center anim">
                 <!-- image -->
                <div class="service-image-wrap col-lg-6 animate">
-                    <div class="service-image">
-                        <?php echo wp_get_attachment_image($item['image'], 'large', false, array( 'class' => 'object-cover animate fadedown' )) ; ?>
+                    <div class="service-image animate fadedown">
+                        <?php echo wp_get_attachment_image($item['image'], 'large', false, array( 'class' => 'object-cover ' )) ; ?>
                     </div>
                </div>
                <!-- copy -->
@@ -294,8 +294,8 @@ get_header();?>
             <div class="row align-items-center">
                 <!-- image -->
                <div class="service-image-wrap col-lg-6">
-                    <div class="service-image">
-                        <?php echo wp_get_attachment_image($item['image'], 'large', false, array( 'class' => 'object-cover animate fadedown')) ; ?>
+                    <div class="service-image animate fadedown">
+                        <?php echo wp_get_attachment_image($item['image'], 'large', false, array( 'class' => 'object-cover')) ; ?>
                         <div class="service-title"><p class="animate faderight primary-text head-font"><?php echo esc_html( $item['header']) ; ?></p></div>
                     </div>
                </div>
@@ -315,12 +315,14 @@ get_header();?>
     </section>
 
     <!-- RENTAL -->
-    <div class="desktop-rental-slider d-sm-none rental-slider">
+    <div class="desktop-rental-slider d-sm-none rental-slider animate fadedown">
         <?php
         $rental_images = get_field( 'rental_images');
         ?>
         <?php foreach ( $rental_images as $item ) : ?>
-        <?php echo wp_get_attachment_image( $item['ID'], 'large', false, array( 'class' => 'object-cover animate fadedown' ) );?>
+        <div>
+			<?php echo wp_get_attachment_image( $item['ID'], 'large', false, array( 'class' => 'object-cover ' ) );?>
+		</div>
         <?php endforeach; ?>
     </div>
     <section class="black-bg white-text rental">
@@ -339,9 +341,11 @@ get_header();?>
                     <div class="rental-sub-copy animate fadein"><?php echo do_shortcode( $r_sub_copy ); ?></div>
                 </div>
                 <div class="col-lg-6 d-none d-sm-block rental-image-wrap animate fadeleft">
-                    <div class="rental-image rental-slider">
+                    <div class="rental-image rental-slider-2">
                     <?php foreach ( $rental_images as $item ) : ?>
-                        <?php echo wp_get_attachment_image( $item['ID'], 'large', false, array( 'class' => 'object-cover' ) );?>
+						<div>
+						<?php echo wp_get_attachment_image( $item['ID'], 'large', false, array( 'class' => 'object-cover', 'loading' => false, ) );?>
+						</div>
                     <?php endforeach; ?>
                     </div>
                 </div>
