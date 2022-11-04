@@ -43,7 +43,7 @@
 				}
 			?>
 			
-			<a href="<? echo esc_url( $item['url'] ); ?>" class="<?php echo esc_attr( $bg ); ?> white-text" target="_blank"><i class="white-text fa-brands fa-<?php echo esc_attr( $icon ); ?>"></i></a>
+			<a href="<?php echo esc_url( $item['url'] ); ?>" class="<?php echo esc_attr( $bg ); ?> white-text" target="_blank"><i class="white-text fa-brands fa-<?php echo esc_attr( $icon ); ?>"></i></a>
 			
 			<?php endforeach; ?>
 			</span>

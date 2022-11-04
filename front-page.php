@@ -10,23 +10,26 @@ get_header();?>
     <!-- HERO -->
     <section class="hero d-flex align-items-center">
         <div class="hero-media">
-        <?php
-        $media_type = get_field( 'video_or_image_hero' );
-        if ( $media_type === 'video' || $media_type === 'videourl' ) :
-            // if video clip
-            if ( $media_type === 'video' && ! wp_is_mobile() ) : ?>
-            <video preload="true" playsinline autoplay loop muted src="<?php echo wp_get_attachment_url( get_field( 'hero_video' ) ); ?>"></video>
-            <!-- if vimeo video file link -->
-            <?php elseif ( $media_type === 'videourl' && ! wp_is_mobile() ) : ?>
-            <video  preload="auto" autoplay="" loop="" muted="">
-                <source src="<?php echo esc_url( get_field( 'hero_video_url' ) ); ?>" type="video/mp4">
-            </video>
-            <?php elseif ( wp_is_mobile() ) : ?>
-                <?php echo wp_get_attachment_image( get_field( 'video_fallback' ), 'large', false, array( 'class' => 'object-cover') ); ?>
-            <?php endif; ?>
-        <?php elseif ( $media_type === 'image' ) : ?>
-            <?php echo wp_get_attachment_image( get_field( 'hero_image' ), 'large', false, array( 'class' => 'object-cover') ); ?>
-        <?php endif; ?>
+            <div class="d-md-block d-none">
+                <?php
+                $media_type = get_field( 'video_or_image_hero' );
+                if ( $media_type === 'video' || $media_type === 'videourl' ) :
+                    // if video clip
+                    if ( $media_type === 'video' ) : ?>
+                    <video preload="true" playsinline autoplay loop muted src="<?php echo wp_get_attachment_url( get_field( 'hero_video' ) ); ?>"></video>
+                    <!-- if vimeo video file link -->
+                    <?php elseif ( $media_type === 'videourl' ) : ?>
+                    <video  preload="auto" autoplay="" loop="" muted="">
+                        <source src="<?php echo esc_url( get_field( 'hero_video_url' ) ); ?>" type="video/mp4">
+                    </video>
+                    <?php endif; ?>
+                <?php elseif ( $media_type === 'image' ) : ?>
+                    <?php echo wp_get_attachment_image( get_field( 'hero_image' ), 'full', false, array( 'class' => 'object-cover') ); ?>
+                <?php endif; ?>
+            </div>
+            <div class="d-md-none mobile-header">
+                
+            </div>
         </div><!-- end of hero-media -->
         
         <div class="container">
@@ -123,7 +126,7 @@ get_header();?>
                     </div>
                     <div class="col-xl-5 col-lg-4 team-image">
                         <div class="team-wrap">
-                            <?php echo wp_get_attachment_image( $image, 'large', false, array( 'class' => 'object-cover' ) ); ?>
+                            <?php echo wp_get_attachment_image( $image, 'medium-large', false, array( 'class' => 'object-cover' ) ); ?>
                         </div>
                     </div>
                 </div>
@@ -154,7 +157,7 @@ get_header();?>
                     </div>
                     <div class="col-xl-5 col-lg-4 team-image">
                         <div class="team-wrap">
-                            <?php echo wp_get_attachment_image( $image, 'large', false, array( 'class' => 'object-cover' ) ); ?>
+                            <?php echo wp_get_attachment_image( $image, 'medium-large', false, array( 'class' => 'object-cover' ) ); ?>
                         </div>
                     </div>
                 </div>
@@ -222,7 +225,7 @@ get_header();?>
                 <!-- image -->
                 <div class="works-media-wrap col-lg-6 animate faderight">
                     <div class="works-media">
-                    <?php echo wp_get_attachment_image($item['cover_photo'], 'large', false, array( 'class' => 'object-cover', 'loading' => false, ) );  ?>
+                    <?php echo wp_get_attachment_image($item['cover_photo'], 'medium-large', false, array( 'class' => 'object-cover', 'loading' => false, ) );  ?>
                     </div>
                 </div>
                 <!-- copy -->
@@ -275,7 +278,7 @@ get_header();?>
                 <!-- image -->
                <div class="service-image-wrap col-lg-6 animate">
                     <div class="service-image animate fadedown">
-                        <?php echo wp_get_attachment_image($item['image'], 'large', false, array( 'class' => 'object-cover ' )) ; ?>
+                        <?php echo wp_get_attachment_image($item['image'], 'medium-large', false, array( 'class' => 'object-cover ' )) ; ?>
                     </div>
                </div>
                <!-- copy -->
@@ -295,7 +298,7 @@ get_header();?>
                 <!-- image -->
                <div class="service-image-wrap col-lg-6">
                     <div class="service-image animate fadedown">
-                        <?php echo wp_get_attachment_image($item['image'], 'large', false, array( 'class' => 'object-cover')) ; ?>
+                        <?php echo wp_get_attachment_image($item['image'], 'medium-large', false, array( 'class' => 'object-cover')) ; ?>
                         <div class="service-title"><p class="animate faderight primary-text head-font"><?php echo esc_html( $item['header']) ; ?></p></div>
                     </div>
                </div>
@@ -321,7 +324,7 @@ get_header();?>
         ?>
         <?php foreach ( $rental_images as $item ) : ?>
         <div>
-			<?php echo wp_get_attachment_image( $item['ID'], 'large', false, array( 'class' => 'object-cover ' ) );?>
+			<?php echo wp_get_attachment_image( $item['ID'], 'medium-large', false, array( 'class' => 'object-cover ' ) );?>
 		</div>
         <?php endforeach; ?>
     </div>
@@ -344,7 +347,7 @@ get_header();?>
                     <div class="rental-image rental-slider-2">
                     <?php foreach ( $rental_images as $item ) : ?>
 						<div>
-						<?php echo wp_get_attachment_image( $item['ID'], 'large', false, array( 'class' => 'object-cover', 'loading' => false, ) );?>
+						<?php echo wp_get_attachment_image( $item['ID'], 'medium-large', false, array( 'class' => 'object-cover', 'loading' => false, ) );?>
 						</div>
                     <?php endforeach; ?>
                     </div>

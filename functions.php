@@ -55,6 +55,16 @@ if( function_exists('acf_add_options_page') ) {
 	
 }
 
+function coffeeshop_setup() {
+
+    add_theme_support('post-thumbnails');
+
+    add_theme_support('title-tag');
+
+    add_image_size('medium-large', 700, 600, true);
+}
+add_action('after_setup_theme', 'coffeeshop_setup');
+
 // creates the menus
 function coffee_menu() {
     // Wordpress function
@@ -99,12 +109,10 @@ function embed_video($url, $photo, $class) {
 
     echo '<div class="video-embed ' . $class . '">';
     if ( $photo ) {
-        echo wp_get_attachment_image($photo, 'large', false, array( 'class' => 'video-overlay object-cover' )); 
+        echo wp_get_attachment_image($photo, 'large', false, array( 'class' => 'video-overlay object-cover', 'loading' => false, )); 
         echo '<a href="' . esc_url( $finalUrl ) . '" class="fancybox"></a><span class="play-button"></span>';
     } else {
         echo '<iframe width="100%"  src="' . esc_url( $finalUrl ) . '" frameborder="0" allowfullscreen></iframe></div>';
     }
     echo '</div>';
 }
-
-add_filter( 'wp_lazy_loading_enabled', '__return_false' );

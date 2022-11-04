@@ -88,10 +88,6 @@ img {
   outline: none;
 }
 
-img[src=""] {
-  content: "";
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -313,6 +309,19 @@ header li {
 .header-menu ul {
   position: relative;
   z-index: 1;
+}
+
+img.header-logo.lazyload {
+  display: inline !important;
+}
+
+.mobile-header {
+  background-image: linear-gradient(to bottom, #6A6865, #D97A18);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 @media (max-width: 991px) {

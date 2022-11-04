@@ -64,11 +64,21 @@ body {
     line-height: 23px;
 }
 
-.grecaptcha-badge { visibility: hidden; } .grecaptcha-badge { visibility: hidden; } .grecaptcha-badge { visibility: hidden; }
-
-.wf-loading body {
+.grecaptcha-badge {
     visibility: hidden;
-}
+  }
+  
+  .grecaptcha-badge {
+    visibility: hidden;
+  }
+  
+  .grecaptcha-badge {
+    visibility: hidden;
+  }
+  
+  .wf-loading body {
+    visibility: hidden;
+  }
 
 
 ul {
@@ -98,10 +108,6 @@ img {
     height: auto;
     border: none;
     outline: none;
-}
-
-img[src=""]{
-    content: "";
 }
 
 .object-cover {
