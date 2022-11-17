@@ -21,7 +21,7 @@
                     'theme_location' => 'header-menu',
                     'container' => 'nav',
                     'container_class' => 'header-menu',
-                    'menu_class' => 'd-flex justify-content-end white-text animate fadedown delay',
+                    'menu_class' => 'd-flex justify-content-end white-text',
                 )
             );
             wp_nav_menu($args)	
